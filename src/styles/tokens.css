@@ -1,24 +1,22 @@
 /* ─── Layer 1: primitives. Raw values. Never used directly in a component. ─── */
 :root {
-  /* Deep blue/petrol base — NOT warm-brown (Maison Aurelle) and not neutral
-     gray either. Orange/copper is blue's complementary color, so the accent
-     pops harder against this than against a neutral base would. Reference:
-     Dario's moodboard (dark teal velvet + copper candle holders). */
-  --sk-ink-950: #0f1720;
-  --sk-ink-900: #1a2530;
-  --sk-ink-800: #24333f; /* raised surfaces — cards/dropdowns read as elevated */
+  /* Dario's palette: raw/patinated copper. Teal + cream given as exact
+     hexes; the accent was originally #e37434 (orange) but swapped for an
+     authentic copper-metal tone per Dario's reference photo — same "raw vs.
+     oxidized copper" concept as the teal (verdigris patina). */
+  --sk-teal-700: #007979; /* oxidized copper — patina */
+  --sk-teal-400: #24b1b1; /* oxidized copper — lighter patina highlight */
+  --sk-cream-100: #ffe2af; /* polished copper shine */
+  --sk-copper-500: #b87333; /* raw/polished copper */
 
-  --sk-copper-600: #b8541f; /* light-mode accent */
-  --sk-copper-500: #d6702f; /* hover state, both themes */
-  --sk-copper-400: #f0904a; /* dark-mode accent — brighter, more luminous on the dark blue */
-
-  --sk-ink-600: #56707a; /* muted secondary text, light mode — teal-tinted gray */
-  --sk-ink-300: #a7bcc4; /* secondary text dark mode / strong border light mode */
-  --sk-ink-100: #e0e8ea; /* subtle border, light mode */
-
-  --sk-bone-25: #f6f9fa; /* light-mode raised surfaces */
-  --sk-bone-50: #e8eef0; /* light-mode page background — visibly blue-tinted, not warm cream */
-  --sk-bone-100: #d9e2e5; /* light-mode card-alt background */
+  /* Derived to complete the palette — a true near-black for the dark-mode
+     background/raised surfaces, a lighter cream for light-mode elevation,
+     and copper shade variants for hover/contrast in each theme. */
+  --sk-teal-950: #041515; /* dark-mode page background */
+  --sk-teal-850: #0a2323; /* dark-mode raised surfaces (cards, dropdowns) */
+  --sk-cream-50: #fff6e6; /* light-mode raised surfaces, lighter than cream-100 */
+  --sk-copper-600: #96591f; /* darker/oxidizing copper — light-mode accent hover */
+  --sk-copper-400: #d9954f; /* lighter/polished copper — dark-mode accent, more luminous */
 
   --sk-red-500: #c0392b; /* form errors only */
 }
@@ -26,50 +24,50 @@
 /* ─── Layer 2: semantic. THE ONLY NAMES THAT DIVERGE PER THEME. ─── */
 :root,
 [data-theme="light"] {
-  --surface-base: var(--sk-bone-50);
-  --surface-raised: var(--sk-bone-25);
-  --surface-inverse: var(--sk-ink-950);
-  --surface-muted: var(--sk-bone-100);
+  --surface-base: var(--sk-cream-100);
+  --surface-raised: var(--sk-cream-50);
+  --surface-inverse: var(--sk-teal-950);
+  --surface-muted: #f5d99a;
 
-  --text-primary: var(--sk-ink-950);
-  --text-secondary: var(--sk-ink-600);
-  --text-on-inverse: var(--sk-bone-50);
-  --text-on-accent: var(--sk-bone-50);
+  --text-primary: var(--sk-teal-950);
+  --text-secondary: var(--sk-teal-700);
+  --text-on-inverse: var(--sk-cream-100);
+  --text-on-accent: var(--sk-teal-950); /* copper is mid-bright — dark text reads best on top */
 
-  --accent-copper: var(--sk-copper-600);
-  --accent-copper-hover: var(--sk-copper-500);
+  --accent-copper: var(--sk-copper-500);
+  --accent-copper-hover: var(--sk-copper-600);
 
-  --border-subtle: var(--sk-ink-100);
-  --border-strong: var(--sk-ink-300);
-  --focus-ring: var(--sk-copper-600);
+  --border-subtle: #f0d19c;
+  --border-strong: #d9b06e;
+  --focus-ring: var(--sk-copper-500);
   --danger: var(--sk-red-500);
 
   /* Fixed dark editorial treatment — deliberately identical in both theme
      blocks, for elements that must always read as "dark band" regardless of
      the active theme (promo bar, footer, hero backdrop). */
-  --surface-editorial: var(--sk-ink-950);
-  --text-on-editorial: var(--sk-bone-50);
+  --surface-editorial: var(--sk-teal-950);
+  --text-on-editorial: var(--sk-cream-100);
 }
 
 [data-theme="dark"] {
-  --surface-base: var(--sk-ink-950);
-  --surface-raised: var(--sk-ink-800);
-  --surface-inverse: var(--sk-bone-50);
-  --surface-muted: var(--sk-ink-900);
+  --surface-base: var(--sk-teal-950);
+  --surface-raised: var(--sk-teal-850);
+  --surface-inverse: var(--sk-cream-100);
+  --surface-muted: #0f2e2e;
 
-  --text-primary: var(--sk-bone-50);
-  --text-secondary: var(--sk-ink-300);
-  --text-on-inverse: var(--sk-ink-950);
-  --text-on-accent: var(--sk-ink-950); /* light copper — dark text on top */
+  --text-primary: var(--sk-cream-100);
+  --text-secondary: var(--sk-teal-400);
+  --text-on-inverse: var(--sk-teal-950);
+  --text-on-accent: var(--sk-teal-950);
 
-  --accent-copper: var(--sk-copper-400);
-  --accent-copper-hover: var(--sk-copper-500);
+  --accent-copper: var(--sk-copper-500);
+  --accent-copper-hover: var(--sk-copper-400);
 
-  --border-subtle: #2c3a45;
-  --border-strong: #3f5561;
+  --border-subtle: #123333;
+  --border-strong: var(--sk-teal-700);
   --focus-ring: var(--sk-copper-400);
   --danger: #e05a48;
 
-  --surface-editorial: var(--sk-ink-950);
-  --text-on-editorial: var(--sk-bone-50);
+  --surface-editorial: var(--sk-teal-950);
+  --text-on-editorial: var(--sk-cream-100);
 }
