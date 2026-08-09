@@ -16,9 +16,9 @@
   --sk-ink-300: #a7bcc4; /* secondary text dark mode / strong border light mode */
   --sk-ink-100: #e0e8ea; /* subtle border, light mode */
 
-  --sk-bone-25: #fbfaf8; /* light-mode raised surfaces */
-  --sk-bone-50: #f2f4f4; /* light-mode page background — cool neutral, not cream */
-  --sk-bone-100: #e6eaea; /* light-mode card-alt background */
+  --sk-bone-25: #f6f9fa; /* light-mode raised surfaces */
+  --sk-bone-50: #e8eef0; /* light-mode page background — visibly blue-tinted, not warm cream */
+  --sk-bone-100: #d9e2e5; /* light-mode card-alt background */
 
   --sk-red-500: #c0392b; /* form errors only */
 }
