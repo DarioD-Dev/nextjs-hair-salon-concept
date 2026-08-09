@@ -1,0 +1,18 @@
+{
+  "Meta": {
+    "title": "Salon Kupferglanz",
+    "description": "Hair salon in Vienna — cut, color, and care with character."
+  },
+  "Nav": {
+    "home": "Home",
+    "team": "Team",
+    "leistungen": "Services",
+    "galerie": "Gallery",
+    "kontakt": "Contact"
+  },
+  "Home": {
+    "heroEyebrow": "Hair Salon · Vienna",
+    "heroTitle": "The cut that fits you.",
+    "heroCta": "Meet the team"
+  }
+}

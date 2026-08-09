@@ -1,0 +1,75 @@
+/* ─── Layer 1: primitives. Raw values. Never used directly in a component. ─── */
+:root {
+  /* Deep blue/petrol base — NOT warm-brown (Maison Aurelle) and not neutral
+     gray either. Orange/copper is blue's complementary color, so the accent
+     pops harder against this than against a neutral base would. Reference:
+     Dario's moodboard (dark teal velvet + copper candle holders). */
+  --sk-ink-950: #0f1720;
+  --sk-ink-900: #1a2530;
+  --sk-ink-800: #24333f; /* raised surfaces — cards/dropdowns read as elevated */
+
+  --sk-copper-600: #b8541f; /* light-mode accent */
+  --sk-copper-500: #d6702f; /* hover state, both themes */
+  --sk-copper-400: #f0904a; /* dark-mode accent — brighter, more luminous on the dark blue */
+
+  --sk-ink-600: #56707a; /* muted secondary text, light mode — teal-tinted gray */
+  --sk-ink-300: #a7bcc4; /* secondary text dark mode / strong border light mode */
+  --sk-ink-100: #e0e8ea; /* subtle border, light mode */
+
+  --sk-bone-25: #fbfaf8; /* light-mode raised surfaces */
+  --sk-bone-50: #f2f4f4; /* light-mode page background — cool neutral, not cream */
+  --sk-bone-100: #e6eaea; /* light-mode card-alt background */
+
+  --sk-red-500: #c0392b; /* form errors only */
+}
+
+/* ─── Layer 2: semantic. THE ONLY NAMES THAT DIVERGE PER THEME. ─── */
+:root,
+[data-theme="light"] {
+  --surface-base: var(--sk-bone-50);
+  --surface-raised: var(--sk-bone-25);
+  --surface-inverse: var(--sk-ink-950);
+  --surface-muted: var(--sk-bone-100);
+
+  --text-primary: var(--sk-ink-950);
+  --text-secondary: var(--sk-ink-600);
+  --text-on-inverse: var(--sk-bone-50);
+  --text-on-accent: var(--sk-bone-50);
+
+  --accent-copper: var(--sk-copper-600);
+  --accent-copper-hover: var(--sk-copper-500);
+
+  --border-subtle: var(--sk-ink-100);
+  --border-strong: var(--sk-ink-300);
+  --focus-ring: var(--sk-copper-600);
+  --danger: var(--sk-red-500);
+
+  /* Fixed dark editorial treatment — deliberately identical in both theme
+     blocks, for elements that must always read as "dark band" regardless of
+     the active theme (promo bar, footer, hero backdrop). */
+  --surface-editorial: var(--sk-ink-950);
+  --text-on-editorial: var(--sk-bone-50);
+}
+
+[data-theme="dark"] {
+  --surface-base: var(--sk-ink-950);
+  --surface-raised: var(--sk-ink-800);
+  --surface-inverse: var(--sk-bone-50);
+  --surface-muted: var(--sk-ink-900);
+
+  --text-primary: var(--sk-bone-50);
+  --text-secondary: var(--sk-ink-300);
+  --text-on-inverse: var(--sk-ink-950);
+  --text-on-accent: var(--sk-ink-950); /* light copper — dark text on top */
+
+  --accent-copper: var(--sk-copper-400);
+  --accent-copper-hover: var(--sk-copper-500);
+
+  --border-subtle: #2c3a45;
+  --border-strong: #3f5561;
+  --focus-ring: var(--sk-copper-400);
+  --danger: #e05a48;
+
+  --surface-editorial: var(--sk-ink-950);
+  --text-on-editorial: var(--sk-bone-50);
+}

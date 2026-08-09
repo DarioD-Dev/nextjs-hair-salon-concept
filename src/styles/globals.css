@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@import "./tokens.css";
+@import "./theme.css";
+
+:root {
+  color-scheme: light;
+}
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--surface-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+button:not(:disabled),
+[role="button"] {
+  cursor: pointer;
+}

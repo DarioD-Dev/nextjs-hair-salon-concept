@@ -1,0 +1,18 @@
+{
+  "Meta": {
+    "title": "Salon Kupferglanz",
+    "description": "Friseursalon in Wien — Schnitt, Farbe und Pflege mit Charakter."
+  },
+  "Nav": {
+    "home": "Start",
+    "team": "Team",
+    "leistungen": "Leistungen",
+    "galerie": "Galerie",
+    "kontakt": "Kontakt"
+  },
+  "Home": {
+    "heroEyebrow": "Friseursalon · Wien",
+    "heroTitle": "Der Schnitt, der zu dir passt.",
+    "heroCta": "Team kennenlernen"
+  }
+}
