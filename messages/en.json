@@ -40,6 +40,15 @@
     "specialtiesLabel": "Specialties",
     "portfolioLabel": "Work by {name}"
   },
+  "Leistungen": {
+    "title": "Services & Prices",
+    "subtitle": "Transparent pricing for every occasion — no surprises.",
+    "categoryDamen": "Women",
+    "categoryHerren": "Men",
+    "categoryFarbe": "Color",
+    "categoryPflege": "Care",
+    "durationMinutes": "{minutes} min"
+  },
   "Footer": {
     "credit": "Website by Dario Dominkovic",
     "disclaimer": "Concept study – not an official presence of a real salon."
