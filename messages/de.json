@@ -21,7 +21,18 @@
   "Home": {
     "heroEyebrow": "Friseursalon · Wien",
     "heroTitle": "Der Schnitt, der zu dir passt.",
-    "heroCta": "Team kennenlernen"
+    "heroCta": "Team kennenlernen",
+    "introTitle": "Mehr als ein Haarschnitt",
+    "introBody": "Bei Salon Kupferglanz nehmen wir uns Zeit für eine ehrliche Beratung — jeder Schnitt und jede Farbe wird auf dich abgestimmt, nicht von der Stange.",
+    "teamTitle": "Unser Team",
+    "teamSubtitle": "Drei Stylist:innen, ein gemeinsamer Anspruch: Handwerk mit Charakter.",
+    "teamCta": "Ganzes Team ansehen",
+    "galleryTitle": "Aus dem Salon",
+    "gallerySubtitle": "Ein Ausschnitt aus unserer Arbeit.",
+    "galleryCta": "Ganze Galerie ansehen",
+    "ctaTitle": "Bereit für deinen neuen Look?",
+    "ctaBody": "Schreib uns oder ruf an — wir freuen uns auf dich.",
+    "ctaButton": "Kontakt aufnehmen"
   },
   "Footer": {
     "credit": "Website von Dario Dominkovic",

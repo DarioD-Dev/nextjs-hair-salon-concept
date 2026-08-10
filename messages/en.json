@@ -21,7 +21,18 @@
   "Home": {
     "heroEyebrow": "Hair Salon · Vienna",
     "heroTitle": "The cut that fits you.",
-    "heroCta": "Meet the team"
+    "heroCta": "Meet the team",
+    "introTitle": "More than a haircut",
+    "introBody": "At Salon Kupferglanz, we take the time for an honest consultation — every cut and color is matched to you, never off the shelf.",
+    "teamTitle": "Our team",
+    "teamSubtitle": "Three stylists, one shared standard: craft with character.",
+    "teamCta": "See the whole team",
+    "galleryTitle": "From the salon",
+    "gallerySubtitle": "A glimpse of our work.",
+    "galleryCta": "See the full gallery",
+    "ctaTitle": "Ready for a new look?",
+    "ctaBody": "Write to us or give us a call — we'd love to see you.",
+    "ctaButton": "Get in touch"
   },
   "Footer": {
     "credit": "Website by Dario Dominkovic",
