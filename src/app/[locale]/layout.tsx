@@ -39,7 +39,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html
       lang={locale}
-      className={`${serif.variable} ${sansUi.variable} h-full antialiased`}
+      className={`${serif.variable} ${sansUi.variable} h-full overflow-x-hidden antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-surface text-text">

@@ -3,7 +3,7 @@ import { Fraunces, Manrope } from "next/font/google";
 export const serif = Fraunces({
   subsets: ["latin"],
   variable: "--font-serif",
-  weight: ["400", "500", "600"],
+  weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
 });
 
