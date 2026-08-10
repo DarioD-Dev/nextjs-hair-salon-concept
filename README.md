@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+*[Diese Seite auf Deutsch](README.de.md)*
+
+# Salon Kupferglanz — Hair Salon (Concept)
+
+A fictional concept site for a Vienna hair salon, built as a fully responsive multi-page Next.js frontend. Unlike a single-scroll landing page, this is structured the way a real salon site should be: a browsable team page with individual stylist portfolios, a linkable service price list, a gallery, and contact details.
+
+> This is a concept/portfolio project. "Salon Kupferglanz" is a fictional business — the stylists, prices, and reviews are invented, and there is no real booking system behind it.
+
+## Concept
+
+Research into real Vienna salon sites found two recurring gaps: most either run an outdated, text-heavy page, or outsource booking entirely to a third-party platform, sending visitors away from their own brand mid-visit. The strongest international salon sites, by contrast, all lead with **individual stylist profiles** — letting clients pick a person, not just a shop. That's the differentiator this concept builds on.
+
+The whole palette is a single idea: **copper in two states.** Raw, polished copper (`#B87333`) carries the accent; oxidized copper — verdigris patina (`#007979` / `#24B1B1`) — carries the surfaces and secondary text.
+
+## Features
+
+- Multi-page routing (home, team, services, gallery, contact) — not a one-page scroller
+- Individual stylist profiles with their own mini portfolio and specialties
+- Categorized service price list (women's, men's, color, treatments)
+- German/English UI via `next-intl`, with localized routes (`/de/leistungen`, `/en/services`)
+- Light and dark theme — dark is the default here, matching the salon's editorial mood
+- Fully responsive (mobile, tablet, desktop)
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org/) (App Router)
+- React 19 + TypeScript
+- Tailwind CSS v4 with a three-layer design-token system
+- [next-intl](https://next-intl.dev/) for internationalization
+- [next-themes](https://github.com/pacocoursey/next-themes) for theme switching
+- [Motion](https://motion.dev/) for interaction details
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Credits
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Photography from [Unsplash](https://unsplash.com/license) — see [`public/CREDITS.md`](public/CREDITS.md).
