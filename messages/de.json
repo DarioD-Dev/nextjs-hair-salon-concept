@@ -34,6 +34,12 @@
     "ctaBody": "Schreib uns oder ruf an — wir freuen uns auf dich.",
     "ctaButton": "Kontakt aufnehmen"
   },
+  "Team": {
+    "title": "Unser Team",
+    "subtitle": "Lern die Menschen hinter Salon Kupferglanz kennen — jede und jeder mit eigenem Schwerpunkt und eigenem Stil.",
+    "specialtiesLabel": "Schwerpunkte",
+    "portfolioLabel": "Arbeiten von {name}"
+  },
   "Footer": {
     "credit": "Website von Dario Dominkovic",
     "disclaimer": "Konzeptstudie – kein offizieller Auftritt eines echten Salons."

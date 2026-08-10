@@ -34,6 +34,12 @@
     "ctaBody": "Write to us or give us a call — we'd love to see you.",
     "ctaButton": "Get in touch"
   },
+  "Team": {
+    "title": "Our team",
+    "subtitle": "Meet the people behind Salon Kupferglanz — each with their own focus and their own style.",
+    "specialtiesLabel": "Specialties",
+    "portfolioLabel": "Work by {name}"
+  },
   "Footer": {
     "credit": "Website by Dario Dominkovic",
     "disclaimer": "Concept study – not an official presence of a real salon."
