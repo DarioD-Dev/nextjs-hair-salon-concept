@@ -3,6 +3,14 @@
     "title": "Salon Kupferglanz",
     "description": "Hair salon in Vienna — cut, color, and care with character."
   },
+  "Header": {
+    "logoTagline": "Hair Salon · Vienna",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "themeToggleToLight": "Switch to light mode",
+    "themeToggleToDark": "Switch to dark mode",
+    "switchLanguageTo": "Switch language to {locale}"
+  },
   "Nav": {
     "home": "Home",
     "team": "Team",
@@ -14,5 +22,9 @@
     "heroEyebrow": "Hair Salon · Vienna",
     "heroTitle": "The cut that fits you.",
     "heroCta": "Meet the team"
+  },
+  "Footer": {
+    "credit": "Website by Dario Dominkovic",
+    "disclaimer": "Concept study – not an official presence of a real salon."
   }
 }

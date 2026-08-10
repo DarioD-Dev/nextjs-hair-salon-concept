@@ -9,20 +9,18 @@ export default function Home() {
   const t = useTranslations("Home");
 
   return (
-    <main className="flex flex-1 flex-col">
-      <Section size="lg" className="flex flex-1 items-center">
-        <Container className="text-center">
-          <Text variant="eyebrow" className="text-accent-copper">
-            {t("heroEyebrow")}
-          </Text>
-          <Heading level={1} variant="display" className="mt-4 italic">
-            {t("heroTitle")}
-          </Heading>
-          <ButtonLink href="/team" className="mt-8">
-            {t("heroCta")}
-          </ButtonLink>
-        </Container>
-      </Section>
-    </main>
+    <Section size="lg" className="flex min-h-[70vh] items-center">
+      <Container className="text-center">
+        <Text variant="eyebrow" className="text-accent-copper">
+          {t("heroEyebrow")}
+        </Text>
+        <Heading level={1} variant="display" className="mt-4 italic">
+          {t("heroTitle")}
+        </Heading>
+        <ButtonLink href="/team" className="mt-8">
+          {t("heroCta")}
+        </ButtonLink>
+      </Container>
+    </Section>
   );
 }

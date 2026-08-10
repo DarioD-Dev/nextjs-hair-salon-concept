@@ -19,3 +19,19 @@ button:not(:disabled),
 [role="button"] {
   cursor: pointer;
 }
+
+/* Logo letter-wave: plays once automatically on load (per-letter
+   animation-delay in Logo.tsx), motion-safe only. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes logo-wave {
+    0% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-0.2em);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}

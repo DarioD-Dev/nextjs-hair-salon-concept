@@ -3,6 +3,14 @@
     "title": "Salon Kupferglanz",
     "description": "Friseursalon in Wien — Schnitt, Farbe und Pflege mit Charakter."
   },
+  "Header": {
+    "logoTagline": "Friseur · Wien",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "themeToggleToLight": "Zu hellem Modus wechseln",
+    "themeToggleToDark": "Zu dunklem Modus wechseln",
+    "switchLanguageTo": "Sprache zu {locale} wechseln"
+  },
   "Nav": {
     "home": "Start",
     "team": "Team",
@@ -14,5 +22,9 @@
     "heroEyebrow": "Friseursalon · Wien",
     "heroTitle": "Der Schnitt, der zu dir passt.",
     "heroCta": "Team kennenlernen"
+  },
+  "Footer": {
+    "credit": "Website von Dario Dominkovic",
+    "disclaimer": "Konzeptstudie – kein offizieller Auftritt eines echten Salons."
   }
 }

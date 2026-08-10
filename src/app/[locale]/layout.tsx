@@ -3,6 +3,8 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Providers } from "@/components/layout/Providers";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { routing } from "@/i18n/routing";
 import { serif, sansUi } from "@/styles/fonts";
 import "@/styles/globals.css";
@@ -44,7 +46,11 @@ export default async function LocaleLayout({ children, params }: Props) {
     >
       <body className="min-h-full flex flex-col bg-surface text-text">
         <Providers attribute="data-theme" defaultTheme="dark" enableSystem={false}>
-          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+          <NextIntlClientProvider>
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </NextIntlClientProvider>
         </Providers>
       </body>
     </html>
