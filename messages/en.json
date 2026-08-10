@@ -54,6 +54,24 @@
     "subtitle": "A look at our work — filterable by stylist.",
     "filterAll": "All"
   },
+  "Kontakt": {
+    "title": "Contact",
+    "subtitle": "Write to us or give us a call — we'd love to see you.",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "hoursLabel": "Opening hours",
+    "hoursWeekday": "Tue – Fri: 9am – 7pm",
+    "hoursSaturday": "Sat: 9am – 3pm",
+    "hoursClosed": "Sun & Mon: closed",
+    "emailLabel": "Email",
+    "nameLabel": "Name",
+    "messageLabel": "Message",
+    "submit": "Send message",
+    "submitting": "Sending…",
+    "success": "Thanks for your message! We'll get back to you soon.",
+    "error": "Please check your details and try again.",
+    "mapTitle": "Location on Google Maps"
+  },
   "Footer": {
     "credit": "Website by Dario Dominkovic",
     "disclaimer": "Concept study – not an official presence of a real salon."
