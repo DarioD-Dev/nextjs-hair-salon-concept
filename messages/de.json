@@ -49,6 +49,11 @@
     "categoryPflege": "Pflege",
     "durationMinutes": "{minutes} Min."
   },
+  "Galerie": {
+    "title": "Galerie",
+    "subtitle": "Ein Einblick in unsere Arbeit — nach Stylist:in filterbar.",
+    "filterAll": "Alle"
+  },
   "Footer": {
     "credit": "Website von Dario Dominkovic",
     "disclaimer": "Konzeptstudie – kein offizieller Auftritt eines echten Salons."
