@@ -1,70 +1,21 @@
 /* ─── Layer 1: primitives. Raw values. Never used directly in a component. ─── */
 :root {
-  /* Dario's palette: raw/patinated copper. Teal + cream given as exact
-     hexes; the accent was originally #e37434 (orange) but swapped for an
-     authentic copper-metal tone per Dario's reference photo — same "raw vs.
-     oxidized copper" concept as the teal (verdigris patina). */
-  --sk-teal-700: #007979; /* oxidized copper — patina */
+  /* Single dark theme (13.08.2026) — light/dark toggle removed. Turquoise
+     (oxidized copper patina) is the dominant identity color; raw copper is
+     the accent, brightened from the original #b87333 so it reads as a
+     genuine second color rather than a muted detail. */
+  --sk-teal-950: #041515; /* page background */
+  --sk-teal-850: #0a2323; /* raised surfaces (cards, dropdowns) */
+  --sk-teal-700: #007979; /* oxidized copper — deep patina */
   --sk-teal-400: #24b1b1; /* oxidized copper — lighter patina highlight */
-  --sk-cream-100: #ffe2af; /* polished copper shine */
-  --sk-copper-500: #b87333; /* raw/polished copper */
-
-  /* Derived to complete the palette — a true near-black for the dark-mode
-     background/raised surfaces, a lighter cream for light-mode elevation,
-     and copper shade variants for hover/contrast in each theme. */
-  --sk-teal-950: #041515; /* dark-mode page background */
-  --sk-teal-850: #0a2323; /* dark-mode raised surfaces (cards, dropdowns) */
-  --sk-cream-50: #fff6e6; /* light-mode raised surfaces, lighter than cream-100 */
-  --sk-copper-600: #96591f; /* darker/oxidizing copper — light-mode accent hover */
-  --sk-copper-400: #d9954f; /* lighter/polished copper — dark-mode accent, more luminous */
-
-  /* Light-mode-only additions (10.08.2026 design pass). The concept: light
-     mode = polished/raw copper's turf, dark mode = the patina's turf — so
-     light mode should never lean on teal, and needs a deeper, richer copper
-     than --sk-copper-500 both to read as "metal" against a light background
-     and to clear WCAG AA (the original #b87333 measured 3.02:1 on
-     --sk-cream-100, well under the 4.5:1 minimum for normal text). */
-  --sk-copper-700: #8c5023; /* deep/oxidizing copper — light-mode accent (5.1:1 on cream-100) */
-  --sk-copper-800: #6f3d1a; /* darkest copper — light-mode accent hover (7.1:1 on cream-100) */
-  --sk-umber-600: #6b4423; /* muted copper-brown — light-mode secondary text, replaces teal (6.76:1 on cream-100) */
-  --sk-bronze-300: #dab873; /* aged bronze — light-mode "muted" surface band, one clear step down from cream-100 */
-  --sk-bronze-200: #e6cb95; /* light-mode subtle border — previously nearly invisible against cream-100 */
-  --sk-bronze-400: #b8935a; /* light-mode strong border */
-
-  --sk-red-500: #c0392b; /* form errors only */
+  --sk-cream-100: #ffe2af; /* polished copper shine — primary text */
+  --sk-copper-500: #c9853d; /* raw copper accent (6.15:1 on teal-950) */
+  --sk-copper-400: #e0a25c; /* lighter copper — accent hover (8.45:1 on teal-950) */
+  --sk-red-500: #e05a48; /* form errors */
 }
 
-/* ─── Layer 2: semantic. THE ONLY NAMES THAT DIVERGE PER THEME. ─── */
-:root,
-[data-theme="light"] {
-  --surface-base: var(--sk-cream-100);
-  --surface-raised: var(--sk-cream-50);
-  --surface-inverse: var(--sk-teal-950);
-  --surface-muted: var(--sk-bronze-300);
-
-  --text-primary: var(--sk-teal-950);
-  /* Deep copper-brown, not teal — teal is the patina's identity (dark mode
-     only); using it for light-mode body text mixed the two metaphors. */
-  --text-secondary: var(--sk-umber-600);
-  --text-on-inverse: var(--sk-cream-100);
-  --text-on-accent: var(--sk-cream-100); /* accent-copper is now dark enough to need light text on top */
-
-  --accent-copper: var(--sk-copper-700);
-  --accent-copper-hover: var(--sk-copper-800);
-
-  --border-subtle: var(--sk-bronze-200);
-  --border-strong: var(--sk-bronze-400);
-  --focus-ring: var(--sk-copper-700);
-  --danger: var(--sk-red-500);
-
-  /* Fixed dark editorial treatment — deliberately identical in both theme
-     blocks, for elements that must always read as "dark band" regardless of
-     the active theme (promo bar, footer, hero backdrop). */
-  --surface-editorial: var(--sk-teal-950);
-  --text-on-editorial: var(--sk-cream-100);
-}
-
-[data-theme="dark"] {
+/* ─── Layer 2: semantic. ─── */
+:root {
   --surface-base: var(--sk-teal-950);
   --surface-raised: var(--sk-teal-850);
   --surface-inverse: var(--sk-cream-100);
@@ -73,20 +24,22 @@
   --text-primary: var(--sk-cream-100);
   --text-secondary: var(--sk-teal-400);
   --text-on-inverse: var(--sk-teal-950);
+  /* Dark, not cream — the brightened accent-copper is light enough now that
+     light text on top drops to 2.43:1 (fails AA); dark text holds 6.15:1. */
   --text-on-accent: var(--sk-teal-950);
 
   --accent-copper: var(--sk-copper-500);
   --accent-copper-hover: var(--sk-copper-400);
 
   --border-subtle: #123333;
-  /* Lighter patina highlight, not the darker teal-700 — dark mode is the
-     patina's turf, so its most visible border role (secondary buttons,
-     inactive filter pills, Select) should actually read as oxidized copper,
-     not fade into a near-black line. */
   --border-strong: var(--sk-teal-400);
   --focus-ring: var(--sk-copper-400);
-  --danger: #e05a48;
+  --danger: var(--sk-red-500);
 
+  /* Fixed dark editorial treatment — same values as surface-base/text-primary
+     now that there's only one theme, kept as separate names for elements
+     that must always read as "dark band" regardless of local surface tone
+     (promo bar, footer, hero backdrop). */
   --surface-editorial: var(--sk-teal-950);
   --text-on-editorial: var(--sk-cream-100);
 }

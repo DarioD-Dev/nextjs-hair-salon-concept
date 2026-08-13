@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { Providers } from "@/components/layout/Providers";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { routing } from "@/i18n/routing";
@@ -39,19 +38,13 @@ export default async function LocaleLayout({ children, params }: Props) {
   setRequestLocale(locale);
 
   return (
-    <html
-      lang={locale}
-      className={`${serif.variable} ${sansUi.variable} h-full overflow-x-hidden antialiased`}
-      suppressHydrationWarning
-    >
+    <html lang={locale} className={`${serif.variable} ${sansUi.variable} h-full overflow-x-hidden antialiased`}>
       <body className="min-h-full flex flex-col bg-surface text-text">
-        <Providers attribute="data-theme" defaultTheme="dark" enableSystem={false}>
-          <NextIntlClientProvider>
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </NextIntlClientProvider>
-        </Providers>
+        <NextIntlClientProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
