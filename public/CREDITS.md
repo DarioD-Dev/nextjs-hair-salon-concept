@@ -16,7 +16,7 @@ Verwendete Foto-IDs (Stand 13.08.2026):
 - photo-1593702288056-7927b442d0fa (Selin, Portfolio)
 - photo-1711274093746-b588a17d2716 (Selin, Portfolio)
 - photo-1654097801176-cb1795fd0c5e (Selin, Portfolio)
-- photo-1613031595478-de64daa4b8f9 (Startseite Hero, Kupferrohr-Spirale)
-- photo-1428194949883-cafda571f3c4 (Kupfer-Textur, Glow-Flächen)
+- photo-1781450090585-1a511b7066d9 (Startseite Hero, Salon-Interieur)
+- photo-1428194949883-cafda571f3c4 (Kupfer-Textur, Seitentitel-Bänder)
 
 **13.08.2026 — Markus-Weber-Bug behoben:** Porträt und zwei der drei Portfolio-Fotos zeigten fälschlich eine Frau bzw. eine allgemeine Salon-Szene ohne erkennbaren Bezug zu ihm — vor dem Ersetzen jedes Bild visuell geprüft (heruntergeladen + angeschaut), nicht nur die Text-Beschreibung der Suche vertraut.
