@@ -24,7 +24,7 @@ export async function TeamPreview({ locale }: { locale: Locale }) {
         </div>
         <div className="grid gap-6 sm:grid-cols-3">
           {stylists.map((stylist) => (
-            <Card key={stylist.id} hover className="flex flex-col gap-0 overflow-hidden p-0">
+            <Card key={stylist.id} className="flex flex-col gap-0 overflow-hidden p-0">
               <div className="relative aspect-[4/5]">
                 <Image
                   src={stylist.image}
