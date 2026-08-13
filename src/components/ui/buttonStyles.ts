@@ -4,7 +4,13 @@ export type ButtonVariant = "primary" | "secondary" | "ghost" | "link";
 export type ButtonSize = "sm" | "md" | "lg";
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary: "bg-accent-copper text-text-on-accent hover:bg-accent-copper-hover",
+  // A flat accent-copper fill read as a plastic swatch, not metal — a
+  // diagonal two-stop gradient between the accent and its hover shade
+  // suggests light catching a brushed surface. `hover:brightness-110`
+  // (not a background swap) so the shift transitions smoothly via `filter`
+  // instead of hard-cutting between two gradients.
+  primary:
+    "bg-[linear-gradient(135deg,var(--accent-copper)_0%,var(--accent-copper-hover)_100%)] text-text-on-accent transition-[filter] duration-300 hover:brightness-110",
   secondary:
     "border border-border-strong text-text hover:border-accent-copper hover:text-accent-copper",
   ghost: "text-text hover:text-accent-copper",

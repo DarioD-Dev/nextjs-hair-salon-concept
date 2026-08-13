@@ -5,8 +5,12 @@ import { Text } from "@/components/ui/Text";
 
 export function PageHeader({ title, subtitle }: { title: string; subtitle?: string }) {
   return (
-    <Section tone="muted" className="py-12">
-      <Container className="flex flex-col items-center gap-3 text-center">
+    <Section tone="muted" className="relative overflow-hidden py-12">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_0%,color-mix(in_srgb,var(--accent-copper)_12%,transparent),transparent_70%)]"
+      />
+      <Container className="relative flex flex-col items-center gap-3 text-center">
         <Heading level={1} variant="section">
           {title}
         </Heading>

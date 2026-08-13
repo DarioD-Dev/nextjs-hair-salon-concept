@@ -9,8 +9,12 @@ export async function FinalCta() {
   const t = await getTranslations("Home");
 
   return (
-    <Section tone="editorial" size="lg">
-      <Container className="flex flex-col items-center gap-5 text-center">
+    <Section tone="editorial" size="lg" className="relative overflow-hidden">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_60%_at_50%_100%,color-mix(in_srgb,var(--accent-copper)_25%,transparent),transparent_70%)]"
+      />
+      <Container className="relative flex flex-col items-center gap-5 text-center">
         <Heading level={2} variant="section" className="text-text-on-editorial">
           {t("ctaTitle")}
         </Heading>
