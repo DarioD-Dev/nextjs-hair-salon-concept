@@ -4,7 +4,6 @@ import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
-import { ImageShine } from "@/components/ui/ImageShine";
 import { Section } from "@/components/ui/Section";
 import { Text } from "@/components/ui/Text";
 import { getStylists } from "@/data/stylists";
@@ -25,7 +24,7 @@ export async function TeamPreview({ locale }: { locale: Locale }) {
         </div>
         <div className="grid gap-6 sm:grid-cols-3">
           {stylists.map((stylist) => (
-            <Card key={stylist.id} hover className="group flex flex-col gap-0 overflow-hidden p-0">
+            <Card key={stylist.id} hover className="flex flex-col gap-0 overflow-hidden p-0">
               <div className="relative aspect-[4/5]">
                 <Image
                   src={stylist.image}
@@ -34,7 +33,6 @@ export async function TeamPreview({ locale }: { locale: Locale }) {
                   sizes="(min-width: 640px) 33vw, 100vw"
                   className="object-cover"
                 />
-                <ImageShine />
               </div>
               <div className="flex flex-col gap-1 px-6 py-5">
                 <Heading level={3} variant="card">

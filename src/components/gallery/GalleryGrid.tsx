@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { ImageShine } from "@/components/ui/ImageShine";
 
 export function GalleryGrid({
   images,
@@ -9,7 +8,7 @@ export function GalleryGrid({
   return (
     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6">
       {images.map((image, index) => (
-        <div key={`${image.src}-${index}`} className="group relative aspect-square overflow-hidden rounded-lg">
+        <div key={`${image.src}-${index}`} className="relative aspect-square overflow-hidden rounded-lg">
           <Image
             src={image.src}
             alt=""
@@ -17,7 +16,6 @@ export function GalleryGrid({
             sizes="(min-width: 640px) 33vw, 50vw"
             className="object-cover"
           />
-          <ImageShine />
           <div className="absolute inset-0 bg-gradient-to-t from-surface-editorial/70 via-transparent to-transparent" />
           <p className="absolute bottom-3 left-3 font-sans text-xs uppercase tracking-wide text-text-on-editorial">
             {image.stylistName}
