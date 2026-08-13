@@ -38,11 +38,11 @@ const stylists: Stylist[] = [
       de: ["Herrenschnitt", "Fade", "Bartpflege"],
       en: ["Men's cuts", "Fades", "Beard grooming"],
     },
-    image: unsplash("photo-1619718908820-5c1de14e0b7e"),
+    image: unsplash("photo-1654097800183-574ba7368f74"),
     portfolio: [
-      unsplash("photo-1647462741268-e5724e5886c0"),
-      unsplash("photo-1675034743339-0b0747047727"),
-      unsplash("photo-1704072650662-76df3af134a7"),
+      unsplash("photo-1503951914875-452162b0f3f1"),
+      unsplash("photo-1657105052497-f996284ffff8"),
+      unsplash("photo-1514336937476-a5b961020a5c"),
     ],
   },
   {
