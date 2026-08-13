@@ -79,7 +79,11 @@
   --accent-copper-hover: var(--sk-copper-400);
 
   --border-subtle: #123333;
-  --border-strong: var(--sk-teal-700);
+  /* Lighter patina highlight, not the darker teal-700 — dark mode is the
+     patina's turf, so its most visible border role (secondary buttons,
+     inactive filter pills, Select) should actually read as oxidized copper,
+     not fade into a near-black line. */
+  --border-strong: var(--sk-teal-400);
   --focus-ring: var(--sk-copper-400);
   --danger: #e05a48;
 
