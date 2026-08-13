@@ -18,6 +18,19 @@
   --sk-copper-600: #96591f; /* darker/oxidizing copper — light-mode accent hover */
   --sk-copper-400: #d9954f; /* lighter/polished copper — dark-mode accent, more luminous */
 
+  /* Light-mode-only additions (10.08.2026 design pass). The concept: light
+     mode = polished/raw copper's turf, dark mode = the patina's turf — so
+     light mode should never lean on teal, and needs a deeper, richer copper
+     than --sk-copper-500 both to read as "metal" against a light background
+     and to clear WCAG AA (the original #b87333 measured 3.02:1 on
+     --sk-cream-100, well under the 4.5:1 minimum for normal text). */
+  --sk-copper-700: #8c5023; /* deep/oxidizing copper — light-mode accent (5.1:1 on cream-100) */
+  --sk-copper-800: #6f3d1a; /* darkest copper — light-mode accent hover (7.1:1 on cream-100) */
+  --sk-umber-600: #6b4423; /* muted copper-brown — light-mode secondary text, replaces teal (6.76:1 on cream-100) */
+  --sk-bronze-300: #dab873; /* aged bronze — light-mode "muted" surface band, one clear step down from cream-100 */
+  --sk-bronze-200: #e6cb95; /* light-mode subtle border — previously nearly invisible against cream-100 */
+  --sk-bronze-400: #b8935a; /* light-mode strong border */
+
   --sk-red-500: #c0392b; /* form errors only */
 }
 
@@ -27,19 +40,21 @@
   --surface-base: var(--sk-cream-100);
   --surface-raised: var(--sk-cream-50);
   --surface-inverse: var(--sk-teal-950);
-  --surface-muted: #f5d99a;
+  --surface-muted: var(--sk-bronze-300);
 
   --text-primary: var(--sk-teal-950);
-  --text-secondary: var(--sk-teal-700);
+  /* Deep copper-brown, not teal — teal is the patina's identity (dark mode
+     only); using it for light-mode body text mixed the two metaphors. */
+  --text-secondary: var(--sk-umber-600);
   --text-on-inverse: var(--sk-cream-100);
-  --text-on-accent: var(--sk-teal-950); /* copper is mid-bright — dark text reads best on top */
+  --text-on-accent: var(--sk-cream-100); /* accent-copper is now dark enough to need light text on top */
 
-  --accent-copper: var(--sk-copper-500);
-  --accent-copper-hover: var(--sk-copper-600);
+  --accent-copper: var(--sk-copper-700);
+  --accent-copper-hover: var(--sk-copper-800);
 
-  --border-subtle: #f0d19c;
-  --border-strong: #d9b06e;
-  --focus-ring: var(--sk-copper-500);
+  --border-subtle: var(--sk-bronze-200);
+  --border-strong: var(--sk-bronze-400);
+  --focus-ring: var(--sk-copper-700);
   --danger: var(--sk-red-500);
 
   /* Fixed dark editorial treatment — deliberately identical in both theme
