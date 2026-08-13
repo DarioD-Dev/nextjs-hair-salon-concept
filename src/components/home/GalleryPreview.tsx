@@ -24,14 +24,8 @@ export async function GalleryPreview({ locale }: { locale: Locale }) {
         </div>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6">
           {images.map((src) => (
-            <div key={src} className="group relative aspect-square overflow-hidden rounded-lg">
-              <Image
-                src={src}
-                alt=""
-                fill
-                sizes="(min-width: 640px) 33vw, 50vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
+            <div key={src} className="relative aspect-square overflow-hidden rounded-lg">
+              <Image src={src} alt="" fill sizes="(min-width: 640px) 33vw, 50vw" className="object-cover" />
             </div>
           ))}
         </div>
