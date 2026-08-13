@@ -2,7 +2,6 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Badge } from "@/components/ui/Badge";
 import { Heading } from "@/components/ui/Heading";
-import { ImageShine } from "@/components/ui/ImageShine";
 import { Text } from "@/components/ui/Text";
 import { VisuallyHidden } from "@/components/ui/VisuallyHidden";
 import type { ResolvedStylist } from "@/data/types";
@@ -24,7 +23,7 @@ export async function StylistProfile({
         reverse && "lg:[&>*:first-child]:order-2",
       )}
     >
-      <div className="group relative aspect-[4/5] overflow-hidden rounded-lg">
+      <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
         <Image
           src={stylist.image}
           alt={stylist.name}
@@ -32,7 +31,6 @@ export async function StylistProfile({
           sizes="(min-width: 1024px) 50vw, 100vw"
           className="object-cover"
         />
-        <ImageShine />
       </div>
       <div className="flex flex-col gap-4">
         <div>
