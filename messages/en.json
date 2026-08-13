@@ -7,8 +7,6 @@
     "logoTagline": "Hair Salon · Vienna",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "themeToggleToLight": "Switch to light mode",
-    "themeToggleToDark": "Switch to dark mode",
     "switchLanguageTo": "Switch language to {locale}"
   },
   "Nav": {

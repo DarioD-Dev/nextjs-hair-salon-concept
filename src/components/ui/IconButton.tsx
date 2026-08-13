@@ -11,8 +11,7 @@ export function IconButton({
     <button
       aria-label={label}
       className={cn(
-        // "group" lets children opt into their own hover animation
-        // (e.g. ThemeToggle rotating its icon) via group-hover:.
+        // "group" lets an icon child opt into its own hover animation via group-hover:.
         "group flex h-10 w-10 items-center justify-center rounded-full text-text transition-colors hover:text-accent-copper",
         className,
       )}

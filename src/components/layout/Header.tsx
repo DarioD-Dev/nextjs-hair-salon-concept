@@ -3,7 +3,6 @@ import { LocaleSwitcher } from "./LocaleSwitcher";
 import { Logo } from "./Logo";
 import { MobileNav } from "./MobileNav";
 import { Nav } from "./Nav";
-import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
   return (
@@ -13,7 +12,6 @@ export function Header() {
         <Nav className="col-start-2 hidden md:block justify-self-center" />
         <div className="col-start-3 flex items-center justify-end gap-0 sm:gap-2">
           <LocaleSwitcher />
-          <ThemeToggle className="hidden md:flex" />
           <MobileNav />
         </div>
       </Container>

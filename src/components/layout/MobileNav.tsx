@@ -7,7 +7,6 @@ import { createPortal } from "react-dom";
 import { IconButton } from "@/components/ui/IconButton";
 import { Link } from "@/i18n/navigation";
 import { NAV_ITEMS } from "./navItems";
-import { ThemeToggle } from "./ThemeToggle";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -60,8 +59,7 @@ export function MobileNav() {
             aria-modal="true"
             className="fixed inset-0 z-50 flex flex-col bg-surface outline-none"
           >
-            <div className="flex items-center justify-between p-6">
-              <ThemeToggle />
+            <div className="flex items-center justify-end p-6">
               <IconButton label={tHeader("closeMenu")} onClick={() => setOpen(false)}>
                 <X size={22} />
               </IconButton>
