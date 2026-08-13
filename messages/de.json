@@ -7,7 +7,11 @@
         "logoTagline": "Friseur · Wien",
         "openMenu": "Menü öffnen",
         "closeMenu": "Menü schließen",
-        "switchLanguageTo": "Sprache zu {locale} wechseln"
+        "switchLanguageTo": "Sprache zu {locale} wechseln",
+        "social": {
+            "instagram": "Auf Instagram folgen",
+            "facebook": "Auf Facebook folgen"
+        }
     },
     "Nav": {
         "home": "Start",
@@ -17,20 +21,17 @@
         "kontakt": "Kontakt"
     },
     "Home": {
-        "heroEyebrow": "Friseursalon · Wien",
-        "heroTitle": "Der Schnitt, der zu dir passt.",
-        "heroCta": "Team kennenlernen",
-        "introTitle": "Mehr als ein Haarschnitt",
-        "introBody": "Bei Salon Kupferglanz nehmen wir uns Zeit für eine ehrliche Beratung — jeder Schnitt und jede Farbe wird auf dich abgestimmt, nicht von der Stange.",
-        "teamTitle": "Unser Team",
-        "teamSubtitle": "Drei Stylist:innen, ein gemeinsamer Anspruch: Handwerk mit Charakter.",
-        "teamCta": "Ganzes Team ansehen",
-        "galleryTitle": "Aus dem Salon",
-        "gallerySubtitle": "Ein Ausschnitt aus unserer Arbeit.",
-        "galleryCta": "Ganze Galerie ansehen",
-        "ctaTitle": "Bereit für deinen neuen Look?",
-        "ctaBody": "Schreib uns oder ruf an — wir freuen uns auf dich.",
-        "ctaButton": "Kontakt aufnehmen"
+        "heroCta": "Termine buchen",
+        "servicesTitle": "Was wir machen",
+        "serviceCutTitle": "Schnitt",
+        "serviceCutBody": "Damen- und Herrenschnitte, individuell auf dich abgestimmt.",
+        "serviceColorTitle": "Farbe",
+        "serviceColorBody": "Von Ansatzfarbe bis Balayage — Farbkonzepte mit Präzision.",
+        "serviceCareTitle": "Pflege",
+        "serviceCareBody": "Kuren und Behandlungen für gesundes, glänzendes Haar.",
+        "servicesCta": "Alle Leistungen & Preise",
+        "locationTitle": "Wo du uns findest",
+        "locationCta": "Kontakt & Anfahrt"
     },
     "Team": {
         "title": "Unser Team",
