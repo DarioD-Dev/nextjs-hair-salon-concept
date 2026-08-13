@@ -14,39 +14,43 @@ import type { Locale } from "@/data/types";
 type Props = { params: Promise<{ locale: Locale }> };
 
 export default async function Home({ params }: Props) {
-  const { locale } = await params;
-  setRequestLocale(locale);
-  const t = await getTranslations("Home");
+    const { locale } = await params;
+    setRequestLocale(locale);
+    const t = await getTranslations("Home");
 
-  return (
-    <div className="flex flex-col">
-      <Section size="lg" className="flex min-h-[70vh] items-center">
-        <Container className="text-center">
-          <Text variant="eyebrow" className="text-accent-copper">
-            {t("heroEyebrow")}
-          </Text>
-          <Heading level={1} variant="display" className="mt-4 italic">
-            {t("heroTitle")}
-          </Heading>
-          <ButtonLink href="/team" className="mt-8">
-            {t("heroCta")}
-          </ButtonLink>
-        </Container>
-      </Section>
+    return (
+        <div className="flex flex-col">
+            <Section size="lg" className="relative flex min-h-[70vh] items-center overflow-hidden">
+                <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_35%,color-mix(in_srgb,var(--accent-copper)_20%,transparent),transparent_70%)]"
+                />
+                <Container className="relative text-center">
+                    <Text variant="eyebrow" className="text-accent-copper">
+                        {t("heroEyebrow")}
+                    </Text>
+                    <Heading level={1} variant="display" className="mt-4 italic">
+                        {t("heroTitle")}
+                    </Heading>
+                    <ButtonLink href="/team" className="mt-8">
+                        {t("heroCta")}
+                    </ButtonLink>
+                </Container>
+            </Section>
 
-      <Reveal>
-        <Intro />
-      </Reveal>
+            <Reveal>
+                <Intro />
+            </Reveal>
 
-      <Reveal>
-        <TeamPreview locale={locale} />
-      </Reveal>
+            <Reveal>
+                <TeamPreview locale={locale} />
+            </Reveal>
 
-      <Reveal>
-        <GalleryPreview locale={locale} />
-      </Reveal>
+            <Reveal>
+                <GalleryPreview locale={locale} />
+            </Reveal>
 
-      <FinalCta />
-    </div>
-  );
+            <FinalCta />
+        </div>
+    );
 }
