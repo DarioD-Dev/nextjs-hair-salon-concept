@@ -5,15 +5,6 @@ import { Section } from "@/components/ui/Section";
 import { getStylists } from "@/data/stylists";
 import type { Locale } from "@/data/types";
 
-// Deliberately uneven: two tall frames flanking a wider one, so the grid
-// reads as a composed spread rather than a uniform thumbnail wall.
-const TILES = [
-  "col-span-2 row-span-2 aspect-[4/5]",
-  "col-span-2 aspect-[4/3] sm:col-span-3",
-  "col-span-2 aspect-square sm:col-span-3",
-  "col-span-2 row-span-2 aspect-[4/5] sm:col-span-2",
-] as const;
-
 export async function WorkPreview({ locale }: { locale: Locale }) {
   const t = await getTranslations("Home");
   const stylists = await getStylists(locale);
@@ -34,15 +25,17 @@ export async function WorkPreview({ locale }: { locale: Locale }) {
           <p className="mt-4 font-display text-display-md font-light text-text">{t("workBody")}</p>
         </div>
 
-        <div className="mt-12 grid auto-rows-min grid-cols-4 gap-4 sm:grid-cols-5 sm:gap-6">
-          {images.map((src, index) => (
-            <div key={src} className={`relative overflow-hidden ${TILES[index]}`}>
+        {/* One ratio for every frame — the rhythm comes from the grid and the
+            spacing, not from tiles of differing sizes. */}
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
+          {images.map((src) => (
+            <div key={src} className="relative aspect-[4/5] overflow-hidden">
               <Image
                 src={src}
                 alt=""
                 fill
                 loading="lazy"
-                sizes="(min-width: 640px) 40vw, 50vw"
+                sizes="(min-width: 640px) 23vw, 45vw"
                 className="object-cover"
               />
             </div>

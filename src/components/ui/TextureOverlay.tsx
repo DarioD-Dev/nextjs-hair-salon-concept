@@ -1,16 +1,17 @@
-import Image from "next/image";
+// Grain as an inline SVG background, not an <img>. The previous version
+// loaded a copper macro photo, which Next.js flagged as the Largest
+// Contentful Paint element on every page with a PageHeader — a decorative
+// overlay was deciding the page's LCP score. A data-URI background costs no
+// request and can never become an LCP candidate.
+const NOISE =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E";
 
-const COPPER_TEXTURE = "https://images.unsplash.com/photo-1428194949883-cafda571f3c4?w=800&q=70&auto=format&fit=crop";
-
-// A real macro shot of layered copper panels, not a synthetic noise SVG —
-// blended in at low opacity so it reads as material grain (brushed,
-// slightly uneven) rather than a photo. `mix-blend-mode: overlay` lets the
-// underlying theme color show through instead of imposing the photo's own
-// warm cast, so it works in both light and dark sections.
 export function TextureOverlay() {
   return (
-    <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.15] mix-blend-overlay">
-      <Image src={COPPER_TEXTURE} alt="" fill sizes="100vw" className="object-cover" />
-    </div>
+    <div
+      aria-hidden
+      className="pointer-events-none absolute inset-0 opacity-[0.07] mix-blend-overlay"
+      style={{ backgroundImage: `url("${NOISE}")` }}
+    />
   );
 }
