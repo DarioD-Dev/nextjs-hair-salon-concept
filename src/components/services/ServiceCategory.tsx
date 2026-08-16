@@ -1,6 +1,3 @@
-import { Heading } from "@/components/ui/Heading";
-import { Rule } from "@/components/ui/Rule";
-import { Text } from "@/components/ui/Text";
 import type { ResolvedService } from "@/data/types";
 import { formatPrice } from "@/lib/format";
 
@@ -9,35 +6,38 @@ export function ServiceCategory({
   services,
   locale,
   durationLabel,
+  priceFromLabel,
 }: {
   title: string;
   services: ResolvedService[];
   locale: string;
   durationLabel: (minutes: number) => string;
+  priceFromLabel: (price: string) => string;
 }) {
   return (
-    <div className="flex flex-col gap-6">
-      <Heading level={2} variant="section">
-        {title}
-      </Heading>
-      <Rule className="opacity-30" />
-      <ul className="flex flex-col gap-5">
-        {services.map((service) => (
-          <li key={service.id} className="flex items-baseline justify-between gap-4">
-            <div className="flex flex-col gap-0.5">
-              <Text as="span" variant="body">
-                {service.name}
-              </Text>
-              <Text as="span" variant="small">
+    <section>
+      <h2 className="font-sans text-eyebrow uppercase text-accent-copper">{title}</h2>
+      {/* Name / duration / price on one baseline, separated by rules — the
+          scan path a price list needs, without card chrome around each row. */}
+      <ul className="mt-6 border-t border-border-subtle">
+        {services.map((service) => {
+          const price = formatPrice(service.price, locale);
+          return (
+            <li
+              key={service.id}
+              className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-b border-border-subtle py-5"
+            >
+              <h3 className="font-display text-lg font-light text-text">{service.name}</h3>
+              <p className="order-3 w-full font-sans text-xs uppercase tracking-[0.12em] text-text-secondary sm:order-2 sm:w-auto sm:flex-1">
                 {durationLabel(service.duration)}
-              </Text>
-            </div>
-            <Text as="span" variant="body" className="whitespace-nowrap text-accent-copper">
-              {formatPrice(service.price, locale)}
-            </Text>
-          </li>
-        ))}
+              </p>
+              <p className="order-2 whitespace-nowrap font-sans text-base text-accent-copper sm:order-3">
+                {service.priceFrom ? priceFromLabel(price) : price}
+              </p>
+            </li>
+          );
+        })}
       </ul>
-    </div>
+    </section>
   );
 }

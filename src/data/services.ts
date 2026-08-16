@@ -14,8 +14,8 @@ const services: Service[] = [
 
   // Farbe
   { id: "f1", category: "farbe", name: { de: "Ansatzfarbe", en: "Root color" }, price: 55, duration: 60 },
-  { id: "f2", category: "farbe", name: { de: "Balayage (ab)", en: "Balayage (from)" }, price: 120, duration: 150 },
-  { id: "f3", category: "farbe", name: { de: "Foliensträhnen (ab)", en: "Foil highlights (from)" }, price: 90, duration: 120 },
+  { id: "f2", category: "farbe", name: { de: "Balayage", en: "Balayage" }, price: 120, duration: 150, priceFrom: true },
+  { id: "f3", category: "farbe", name: { de: "Foliensträhnen", en: "Foil highlights" }, price: 90, duration: 120, priceFrom: true },
   { id: "f4", category: "farbe", name: { de: "Tönung", en: "Toner" }, price: 40, duration: 45 },
 
   // Pflege

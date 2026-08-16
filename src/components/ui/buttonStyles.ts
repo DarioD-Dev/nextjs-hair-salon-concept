@@ -14,7 +14,8 @@ const variantStyles: Record<ButtonVariant, string> = {
   secondary:
     "border border-border-strong text-text hover:border-accent-copper hover:text-accent-copper",
   ghost: "text-text hover:text-accent-copper",
-  link: "p-0 text-text underline underline-offset-4 hover:text-accent-copper",
+  // py-1 rather than p-0: the bare text sat under the 24px minimum target size.
+  link: "px-0 py-1 text-text underline underline-offset-4 hover:text-accent-copper",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
