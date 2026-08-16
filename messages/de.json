@@ -1,72 +1,112 @@
 {
-    "Meta": {
-        "title": "Salon Kupferglanz",
-        "description": "Friseursalon in Wien — Schnitt, Farbe und Pflege mit Charakter."
-    },
-    "Header": {
-        "logoTagline": "Friseur · Wien",
-        "openMenu": "Menü öffnen",
-        "closeMenu": "Menü schließen",
-        "switchLanguageTo": "Sprache zu {locale} wechseln",
-        "social": {
-            "instagram": "Auf Instagram folgen",
-            "facebook": "Auf Facebook folgen"
-        }
-    },
-    "Nav": {
-        "home": "Start",
-        "team": "Team",
-        "leistungen": "Leistungen",
-        "kontakt": "Kontakt"
-    },
-    "Home": {
-        "heroCta": "Termine buchen",
-        "servicesTitle": "Was wir machen",
-        "serviceCutTitle": "Schnitt",
-        "serviceCutBody": "Damen- und Herrenschnitte, individuell auf dich abgestimmt.",
-        "serviceColorTitle": "Farbe",
-        "serviceColorBody": "Von Ansatzfarbe bis Balayage — Farbkonzepte mit Präzision.",
-        "serviceCareTitle": "Pflege",
-        "serviceCareBody": "Kuren und Behandlungen für gesundes, glänzendes Haar.",
-        "servicesCta": "Alle Leistungen & Preise",
-        "locationTitle": "Wo du uns findest",
-        "locationCta": "Kontakt & Anfahrt"
-    },
-    "Team": {
-        "title": "Unser Team",
-        "subtitle": "Lern die Menschen hinter Salon Kupferglanz kennen — jede und jeder mit eigenem Schwerpunkt und eigenem Stil.",
-        "specialtiesLabel": "Schwerpunkte",
-        "portfolioLabel": "Arbeiten von {name}"
-    },
-    "Leistungen": {
-        "title": "Leistungen & Preise",
-        "subtitle": "Transparente Preise für jeden Anlass — ganz ohne Überraschungen.",
-        "categoryDamen": "Damen",
-        "categoryHerren": "Herren",
-        "categoryFarbe": "Farbe",
-        "categoryPflege": "Pflege",
-        "durationMinutes": "{minutes} Min."
-    },
-    "Kontakt": {
-        "title": "Kontakt",
-        "subtitle": "Schreib uns oder ruf an — wir freuen uns auf dich.",
-        "addressLabel": "Adresse",
-        "phoneLabel": "Telefon",
-        "hoursLabel": "Öffnungszeiten",
-        "hoursWeekday": "Di – Fr: 9 – 19 Uhr",
-        "hoursSaturday": "Sa: 9 – 15 Uhr",
-        "hoursClosed": "So & Mo: geschlossen",
-        "emailLabel": "E-Mail",
-        "nameLabel": "Name",
-        "messageLabel": "Nachricht",
-        "submit": "Nachricht senden",
-        "submitting": "Wird gesendet…",
-        "success": "Danke für deine Nachricht! Wir melden uns bald bei dir.",
-        "error": "Bitte überprüfe deine Eingaben und versuche es erneut.",
-        "mapTitle": "Standort auf Google Maps"
-    },
-    "Footer": {
-        "credit": "Website von Dario Dominkovic",
-        "disclaimer": "Konzeptstudie – kein offizieller Auftritt eines echten Salons."
+  "Meta": {
+    "title": "Salon Kupferglanz",
+    "description": "Friseursalon in Wien — Schnitt, Farbe und Pflege mit Charakter.",
+    "homeTitle": "Friseur in Wien — Schnitt, Farbe & Pflege",
+    "homeDescription": "Salon Kupferglanz in Wien: individuelle Schnitte, Balayage und Farbkonzepte, Pflege und Treatments. Termine nach Vereinbarung."
+  },
+  "Header": {
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "switchLanguageTo": "Sprache zu {locale} wechseln",
+    "social": {
+      "instagram": "Auf Instagram folgen",
+      "facebook": "Auf Facebook folgen"
     }
+  },
+  "Nav": {
+    "home": "Start",
+    "team": "Team",
+    "leistungen": "Leistungen",
+    "kontakt": "Kontakt"
+  },
+  "Common": {
+    "bookAppointment": "Termin buchen",
+    "call": "Anrufen"
+  },
+  "Home": {
+    "heroEyebrow": "Haare · Farbe · Stil",
+    "heroTagline": "Persönlicher Stil. Professionelle Farbe. Dein Salon in Wien.",
+    "quickLocation": "Standort",
+    "quickHours": "Öffnungszeiten",
+    "quickBooking": "Termine",
+    "quickBookingValue": "Nach Vereinbarung",
+    "dnaTitle": "Unsere DNA",
+    "dna1Title": "Individuell",
+    "dna1Body": "Beratung und Looks, die zu dir passen.",
+    "dna2Title": "Präzise",
+    "dna2Body": "Schnitt und Farbe mit Liebe zum Detail.",
+    "dna3Title": "Persönlich",
+    "dna3Body": "Dein Termin. Deine Zeit. Dein Stil.",
+    "servicesTitle": "Leistungen",
+    "serviceCutTitle": "Cut",
+    "serviceCutBody": "Schnitt · Styling",
+    "serviceColorTitle": "Color",
+    "serviceColorBody": "Balayage · Ansatz · Tönung",
+    "serviceCareTitle": "Care",
+    "serviceCareBody": "Pflege · Olaplex · Treatments",
+    "servicesCta": "Alle Leistungen & Preise",
+    "workTitle": "Unsere Arbeit",
+    "workBody": "Ein Ausschnitt aus dem, was bei uns entsteht.",
+    "teamTitle": "Das Team",
+    "teamBody": "Drei Stylist:innen, ein gemeinsamer Anspruch: Handwerk mit Charakter.",
+    "teamCta": "Team kennenlernen",
+    "locationTitle": "Besuch uns",
+    "locationHoursTitle": "Öffnungszeiten",
+    "locationRoute": "Route planen",
+    "finalCtaTitle": "Dein nächster Termin beginnt hier."
+  },
+  "Hours": {
+    "weekdays": "Di — Fr",
+    "weekdaysTime": "09:00 — 19:00",
+    "saturday": "Sa",
+    "saturdayTime": "09:00 — 15:00",
+    "sunday": "So & Mo",
+    "sundayTime": "Geschlossen",
+    "shortWeekdays": "Di — Fr · 09 — 19 Uhr"
+  },
+  "Team": {
+    "title": "Unser Team",
+    "subtitle": "Lern die Menschen hinter Salon Kupferglanz kennen — jede und jeder mit eigenem Schwerpunkt und eigenem Stil.",
+    "specialtiesLabel": "Schwerpunkte",
+    "portfolioLabel": "Arbeiten von {name}"
+  },
+  "Leistungen": {
+    "title": "Leistungen & Preise",
+    "subtitle": "Transparente Preise für jeden Anlass — ganz ohne Überraschungen.",
+    "categoryDamen": "Damen",
+    "categoryHerren": "Herren",
+    "categoryFarbe": "Farbe",
+    "categoryPflege": "Pflege",
+    "durationMinutes": "{minutes} Min.",
+    "priceFrom": "ab {price}",
+    "disclaimer": "Die endgültigen Kosten können je nach Haarlänge, Aufwand und gewünschtem Ergebnis variieren."
+  },
+  "Kontakt": {
+    "title": "Kontakt",
+    "subtitle": "Schreib uns oder ruf an — wir freuen uns auf dich.",
+    "addressLabel": "Adresse",
+    "phoneLabel": "Telefon",
+    "hoursLabel": "Öffnungszeiten",
+    "hoursWeekday": "Di – Fr: 9 – 19 Uhr",
+    "hoursSaturday": "Sa: 9 – 15 Uhr",
+    "hoursClosed": "So & Mo: geschlossen",
+    "emailLabel": "E-Mail",
+    "nameLabel": "Name",
+    "messageLabel": "Nachricht",
+    "submit": "Nachricht senden",
+    "submitting": "Wird gesendet…",
+    "success": "Danke für deine Nachricht! Wir melden uns bald bei dir.",
+    "error": "Bitte überprüfe deine Eingaben und versuche es erneut.",
+    "mapTitle": "Standort auf Google Maps",
+    "mapLoad": "Karte laden",
+    "mapNotice": "Beim Laden der Karte werden Daten an Google übertragen."
+  },
+  "Footer": {
+    "credit": "Website von Dario Dominkovic",
+    "disclaimer": "Konzeptstudie – kein offizieller Auftritt eines echten Salons.",
+    "navTitle": "Navigation",
+    "contactTitle": "Kontakt",
+    "followTitle": "Folgen"
+  }
 }

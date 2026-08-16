@@ -23,13 +23,19 @@
   --font-display: var(--font-serif);
   --font-sans: var(--font-sans-ui);
 
-  --text-display-lg: 4.5rem;
+  /* Editorial scale: the jump from body to display is deliberately large —
+     a magazine gets its hierarchy from contrast in size, not from many
+     in-between steps. */
+  --text-display-xl: clamp(3.5rem, 11vw, 9rem);
+  --text-display-xl--line-height: 0.92;
+  --text-display-xl--letter-spacing: -0.03em;
+  --text-display-lg: clamp(2.75rem, 6vw, 4.5rem);
   --text-display-lg--line-height: 1.05;
   --text-display-lg--letter-spacing: -0.02em;
-  --text-display-md: 3rem;
+  --text-display-md: clamp(2rem, 4vw, 3rem);
   --text-display-md--line-height: 1.1;
   --text-eyebrow: 0.75rem;
-  --text-eyebrow--letter-spacing: 0.18em;
+  --text-eyebrow--letter-spacing: 0.22em;
 
   /* spacing rhythm */
   --spacing-section: 6rem;

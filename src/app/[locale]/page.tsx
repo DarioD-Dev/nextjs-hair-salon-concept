@@ -1,38 +1,40 @@
-import Image from "next/image";
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { FinalCta } from "@/components/home/FinalCta";
+import { Hero } from "@/components/home/Hero";
 import { LocationPreview } from "@/components/home/LocationPreview";
+import { QuickInfo } from "@/components/home/QuickInfo";
+import { SalonDna } from "@/components/home/SalonDna";
 import { ServicesOverview } from "@/components/home/ServicesOverview";
-import { ButtonLink } from "@/components/ui/ButtonLink";
-import { Container } from "@/components/ui/Container";
-import { Heading } from "@/components/ui/Heading";
-import { Section } from "@/components/ui/Section";
+import { TeamTeaser } from "@/components/home/TeamTeaser";
+import { WorkPreview } from "@/components/home/WorkPreview";
+import { LocalBusinessJsonLd } from "@/components/seo/LocalBusinessJsonLd";
+import { getPathname } from "@/i18n/navigation";
 import type { Locale } from "@/data/types";
 
-const HERO_IMAGE = "https://images.unsplash.com/photo-1781450090585-1a511b7066d9?w=1920&q=80&auto=format&fit=crop";
-
 type Props = { params: Promise<{ locale: Locale }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Meta" });
+  return { title: t("homeTitle"), description: t("homeDescription") };
+}
 
 export default async function Home({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations("Home");
 
   return (
-    <div className="flex flex-col">
-      <Section size="lg" className="relative flex min-h-[70vh] items-center overflow-hidden bg-surface-editorial">
-        <Image src={HERO_IMAGE} alt="" fill priority sizes="100vw" className="object-cover opacity-40" />
-        <div aria-hidden className="pointer-events-none absolute inset-0 bg-surface-editorial/60" />
-        <Container className="relative flex flex-col items-center gap-8 text-center">
-          <Heading level={1} variant="display" className="text-text-on-editorial">
-            Salon Kupferglanz
-          </Heading>
-          <ButtonLink href="/kontakt">{t("heroCta")}</ButtonLink>
-        </Container>
-      </Section>
-
+    <>
+      <LocalBusinessJsonLd url={getPathname({ locale, href: "/" })} />
+      <Hero />
+      <QuickInfo />
+      <SalonDna />
       <ServicesOverview />
-
+      <WorkPreview locale={locale} />
+      <TeamTeaser locale={locale} />
       <LocationPreview />
-    </div>
+      <FinalCta />
+    </>
   );
 }

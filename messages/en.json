@@ -1,10 +1,11 @@
 {
   "Meta": {
     "title": "Salon Kupferglanz",
-    "description": "Hair salon in Vienna — cut, color, and care with character."
+    "description": "Hair salon in Vienna — cut, color, and care with character.",
+    "homeTitle": "Hair Salon in Vienna — Cut, Color & Care",
+    "homeDescription": "Salon Kupferglanz in Vienna: individual cuts, balayage and color concepts, care and treatments. Appointments by arrangement."
   },
   "Header": {
-    "logoTagline": "Hair Salon · Vienna",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "switchLanguageTo": "Switch language to {locale}",
@@ -19,18 +20,50 @@
     "leistungen": "Services",
     "kontakt": "Contact"
   },
+  "Common": {
+    "bookAppointment": "Book an appointment",
+    "call": "Call"
+  },
   "Home": {
-    "heroCta": "Book an appointment",
-    "servicesTitle": "What we do",
+    "heroEyebrow": "Hair · Color · Style",
+    "heroTagline": "Personal style. Professional color. Your salon in Vienna.",
+    "quickLocation": "Location",
+    "quickHours": "Opening hours",
+    "quickBooking": "Appointments",
+    "quickBookingValue": "By arrangement",
+    "dnaTitle": "Our DNA",
+    "dna1Title": "Individual",
+    "dna1Body": "Advice and looks that suit you.",
+    "dna2Title": "Precise",
+    "dna2Body": "Cut and color with an eye for detail.",
+    "dna3Title": "Personal",
+    "dna3Body": "Your appointment. Your time. Your style.",
+    "servicesTitle": "Services",
     "serviceCutTitle": "Cut",
-    "serviceCutBody": "Women's and men's cuts, tailored to you.",
+    "serviceCutBody": "Cut · Styling",
     "serviceColorTitle": "Color",
-    "serviceColorBody": "From root color to balayage — color concepts with precision.",
+    "serviceColorBody": "Balayage · Roots · Toning",
     "serviceCareTitle": "Care",
-    "serviceCareBody": "Treatments and cures for healthy, shiny hair.",
+    "serviceCareBody": "Care · Olaplex · Treatments",
     "servicesCta": "All services & prices",
-    "locationTitle": "Where to find us",
-    "locationCta": "Contact & directions"
+    "workTitle": "Our work",
+    "workBody": "A glimpse of what takes shape here.",
+    "teamTitle": "The team",
+    "teamBody": "Three stylists, one shared standard: craft with character.",
+    "teamCta": "Meet the team",
+    "locationTitle": "Visit us",
+    "locationHoursTitle": "Opening hours",
+    "locationRoute": "Get directions",
+    "finalCtaTitle": "Your next appointment starts here."
+  },
+  "Hours": {
+    "weekdays": "Tue — Fri",
+    "weekdaysTime": "09:00 — 19:00",
+    "saturday": "Sat",
+    "saturdayTime": "09:00 — 15:00",
+    "sunday": "Sun & Mon",
+    "sundayTime": "Closed",
+    "shortWeekdays": "Tue — Fri · 9am — 7pm"
   },
   "Team": {
     "title": "Our team",
@@ -45,7 +78,9 @@
     "categoryHerren": "Men",
     "categoryFarbe": "Color",
     "categoryPflege": "Care",
-    "durationMinutes": "{minutes} min"
+    "durationMinutes": "{minutes} min",
+    "priceFrom": "from {price}",
+    "disclaimer": "Final cost can vary depending on hair length, effort, and the result you're after."
   },
   "Kontakt": {
     "title": "Contact",
@@ -63,10 +98,15 @@
     "submitting": "Sending…",
     "success": "Thanks for your message! We'll get back to you soon.",
     "error": "Please check your details and try again.",
-    "mapTitle": "Location on Google Maps"
+    "mapTitle": "Location on Google Maps",
+    "mapLoad": "Load map",
+    "mapNotice": "Loading the map sends data to Google."
   },
   "Footer": {
     "credit": "Website by Dario Dominkovic",
-    "disclaimer": "Concept study – not an official presence of a real salon."
+    "disclaimer": "Concept study – not an official presence of a real salon.",
+    "navTitle": "Navigation",
+    "contactTitle": "Contact",
+    "followTitle": "Follow"
   }
 }

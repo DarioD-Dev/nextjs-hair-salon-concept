@@ -7,7 +7,7 @@ import { extendTailwindMerge } from "tailwind-merge";
 const customTwMerge = extendTailwindMerge({
   extend: {
     classGroups: {
-      "font-size": [{ text: ["display-lg", "display-md", "eyebrow"] }],
+      "font-size": [{ text: ["display-xl", "display-lg", "display-md", "eyebrow"] }],
       // Same issue as above but for our custom --spacing-section /
       // --spacing-section-lg tokens: without this, tailwind-merge doesn't
       // know py-section conflicts with py-12 etc., so overriding a
