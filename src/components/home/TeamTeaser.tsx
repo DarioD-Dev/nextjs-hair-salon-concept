@@ -22,13 +22,8 @@ export async function TeamTeaser({ locale }: { locale: Locale }) {
         </div>
 
         <ul className="grid gap-6 sm:grid-cols-3">
-          {stylists.map((stylist, index) => (
-            <li
-              key={stylist.id}
-              // Alternating vertical offset keeps the row from reading as three
-              // identical staff cards.
-              className={index === 1 ? "sm:mt-12" : index === 2 ? "sm:mt-6" : undefined}
-            >
+          {stylists.map((stylist) => (
+            <li key={stylist.id}>
               <div className="relative aspect-[3/4] overflow-hidden">
                 <Image
                   src={stylist.image}

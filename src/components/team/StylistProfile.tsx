@@ -5,15 +5,10 @@ import { VisuallyHidden } from "@/components/ui/VisuallyHidden";
 import type { ResolvedStylist } from "@/data/types";
 import { cn } from "@/lib/cn";
 
-// Three distinct compositions rather than one mirrored twice, so the page
-// reads as a sequence of portraits instead of a row of staff cards.
-// 0: portrait left, wide text column. 1: portrait right, narrower. 2:
-// portrait left again but larger, work images pulled under the text.
-const LAYOUTS = [
-  { grid: "lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]", portraitOrder: "", aspect: "aspect-[4/5]" },
-  { grid: "lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]", portraitOrder: "lg:order-2", aspect: "aspect-[3/4]" },
-  { grid: "lg:grid-cols-[minmax(0,6fr)_minmax(0,6fr)]", portraitOrder: "", aspect: "aspect-[5/6]" },
-] as const;
+// Variation comes from which side the portrait sits on, not from the frames
+// themselves — every portrait uses the same 4:5 ratio so the sequence reads
+// as composed rather than as images of random sizes.
+const PORTRAIT_SIDE = ["", "lg:order-2", ""] as const;
 
 export async function StylistProfile({
   stylist,
@@ -25,11 +20,18 @@ export async function StylistProfile({
   priority?: boolean;
 }) {
   const t = await getTranslations("Team");
-  const layout = LAYOUTS[index % LAYOUTS.length];
 
   return (
-    <article className={cn("grid items-start gap-8 lg:gap-16", layout.grid)}>
-      <div className={cn("relative overflow-hidden", layout.aspect, layout.portraitOrder)}>
+    <article className="grid items-start gap-8 lg:grid-cols-2 lg:gap-16">
+      {/* max-h caps the frame below the viewport height: at a full-width 4:5
+          ratio the portrait was taller than the screen on phones, so the
+          stylist's face never fit on screen in one piece. */}
+      <div
+        className={cn(
+          "relative mx-auto aspect-[4/5] max-h-[70svh] w-full overflow-hidden",
+          PORTRAIT_SIDE[index % PORTRAIT_SIDE.length],
+        )}
+      >
         <Image
           src={stylist.image}
           alt={stylist.name}
@@ -65,15 +67,10 @@ export async function StylistProfile({
 
         <div>
           <VisuallyHidden>{t("portfolioLabel", { name: stylist.name })}</VisuallyHidden>
-          {/* Deliberately uneven: the first work image runs taller than the
-              other two, which keeps the trio from reading as a thumbnail row. */}
           <ul className="grid grid-cols-3 gap-3">
-            {stylist.portfolio.map((src, imageIndex) => (
-              <li
-                key={src}
-                className={cn("relative overflow-hidden", imageIndex === 0 ? "aspect-[3/4]" : "aspect-square self-start")}
-              >
-                <Image src={src} alt="" fill loading="lazy" sizes="150px" className="object-cover" />
+            {stylist.portfolio.map((src) => (
+              <li key={src} className="relative aspect-square overflow-hidden">
+                <Image src={src} alt="" fill loading="lazy" sizes="(min-width: 640px) 160px, 30vw" className="object-cover" />
               </li>
             ))}
           </ul>
