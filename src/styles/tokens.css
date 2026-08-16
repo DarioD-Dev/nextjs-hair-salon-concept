@@ -1,45 +1,42 @@
 /* ─── Layer 1: primitives. Raw values. Never used directly in a component. ─── */
 :root {
-  /* Single dark theme (13.08.2026) — light/dark toggle removed. Turquoise
-     (oxidized copper patina) is the dominant identity color; raw copper is
-     the accent, brightened from the original #b87333 so it reads as a
-     genuine second color rather than a muted detail. */
-  --sk-teal-950: #041515; /* page background */
-  --sk-teal-850: #0a2323; /* raised surfaces (cards, dropdowns) */
-  --sk-teal-700: #007979; /* oxidized copper — deep patina */
-  --sk-teal-400: #24b1b1; /* oxidized copper — lighter patina highlight */
-  --sk-cream-100: #ffe2af; /* polished copper shine — primary text */
-  --sk-copper-500: #c9853d; /* raw copper accent (6.15:1 on teal-950) */
-  --sk-copper-400: #e0a25c; /* lighter copper — accent hover (8.45:1 on teal-950) */
+  /* Single dark theme. Turquoise/petrol carries ~90% of the surface area;
+     copper is the scarce 10% accent — that ratio is what makes the copper
+     read as valuable rather than as an orange wash. */
+  --sk-petrol-950: #061817; /* deep petrol — page background */
+  --sk-green-900: #0b2422; /* dark oxidized green — raised surfaces */
+  --sk-teal-800: #163b37; /* oxidized teal — muted bands, borders */
+  --sk-copper-500: #c77a32; /* copper — primary accent (5.44:1 on petrol-950) */
+  --sk-copper-400: #e19a4b; /* bright copper — accent hover (7.76:1 on petrol-950) */
+  --sk-cream-200: #e8d7b5; /* warm cream — body text (12.88:1 on petrol-950) */
+  --sk-ivory-100: #f2ebdd; /* soft ivory — headlines (15.38:1 on petrol-950) */
   --sk-red-500: #e05a48; /* form errors */
 }
 
 /* ─── Layer 2: semantic. ─── */
 :root {
-  --surface-base: var(--sk-teal-950);
-  --surface-raised: var(--sk-teal-850);
-  --surface-inverse: var(--sk-cream-100);
-  --surface-muted: #0f2e2e;
+  --surface-base: var(--sk-petrol-950);
+  --surface-raised: var(--sk-green-900);
+  --surface-inverse: var(--sk-ivory-100);
+  --surface-muted: var(--sk-green-900);
 
-  --text-primary: var(--sk-cream-100);
-  --text-secondary: var(--sk-teal-400);
-  --text-on-inverse: var(--sk-teal-950);
-  /* Dark, not cream — the brightened accent-copper is light enough now that
-     light text on top drops to 2.43:1 (fails AA); dark text holds 6.15:1. */
-  --text-on-accent: var(--sk-teal-950);
+  --text-primary: var(--sk-ivory-100);
+  --text-secondary: var(--sk-cream-200);
+  --text-on-inverse: var(--sk-petrol-950);
+  /* Dark on copper, not cream — copper is bright enough that light text
+     fails AA on top of it, while petrol holds 5.44:1. */
+  --text-on-accent: var(--sk-petrol-950);
 
   --accent-copper: var(--sk-copper-500);
   --accent-copper-hover: var(--sk-copper-400);
 
-  --border-subtle: #123333;
-  --border-strong: var(--sk-teal-400);
+  --border-subtle: var(--sk-teal-800);
+  --border-strong: var(--sk-copper-500);
   --focus-ring: var(--sk-copper-400);
   --danger: var(--sk-red-500);
 
-  /* Fixed dark editorial treatment — same values as surface-base/text-primary
-     now that there's only one theme, kept as separate names for elements
-     that must always read as "dark band" regardless of local surface tone
-     (promo bar, footer, hero backdrop). */
-  --surface-editorial: var(--sk-teal-950);
-  --text-on-editorial: var(--sk-cream-100);
+  /* Kept as separate names for elements that must always read as a dark
+     band regardless of the local surface tone (footer, hero backdrop). */
+  --surface-editorial: var(--sk-petrol-950);
+  --text-on-editorial: var(--sk-ivory-100);
 }

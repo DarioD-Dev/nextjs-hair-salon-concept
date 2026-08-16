@@ -17,7 +17,6 @@
         "home": "Start",
         "team": "Team",
         "leistungen": "Leistungen",
-        "galerie": "Galerie",
         "kontakt": "Kontakt"
     },
     "Home": {
@@ -47,11 +46,6 @@
         "categoryFarbe": "Farbe",
         "categoryPflege": "Pflege",
         "durationMinutes": "{minutes} Min."
-    },
-    "Galerie": {
-        "title": "Galerie",
-        "subtitle": "Ein Einblick in unsere Arbeit — nach Stylist:in filterbar.",
-        "filterAll": "Alle"
     },
     "Kontakt": {
         "title": "Kontakt",
