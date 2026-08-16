@@ -1,42 +1,38 @@
-import { Palette, Scissors, Sparkles } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
-import { Heading } from "@/components/ui/Heading";
 import { Section } from "@/components/ui/Section";
-import { Text } from "@/components/ui/Text";
 
-const SERVICES = [
-  { key: "Cut", Icon: Scissors },
-  { key: "Color", Icon: Palette },
-  { key: "Care", Icon: Sparkles },
-] as const;
+const SERVICES = ["Cut", "Color", "Care"] as const;
 
 export async function ServicesOverview() {
   const t = await getTranslations("Home");
 
   return (
-    <Section>
-      <Container className="flex flex-col gap-10">
-        <Heading level={2} variant="section" className="text-center">
-          {t("servicesTitle")}
-        </Heading>
-        <div className="grid gap-6 sm:grid-cols-3">
-          {SERVICES.map(({ key, Icon }) => (
-            <div key={key} className="flex flex-col items-center gap-3 rounded-lg border border-border-subtle p-8 text-center">
-              <Icon className="text-accent-copper" size={28} strokeWidth={1.5} aria-hidden />
-              <Heading level={3} variant="card">
-                {t(`service${key}Title`)}
-              </Heading>
-              <Text variant="small">{t(`service${key}Body`)}</Text>
-            </div>
-          ))}
-        </div>
-        <div className="flex justify-center">
-          <ButtonLink href="/leistungen" variant="secondary">
+    <Section tone="muted">
+      <Container>
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <h2 className="font-sans text-eyebrow uppercase text-accent-copper">{t("servicesTitle")}</h2>
+          <ButtonLink href="/leistungen" variant="link" className="font-sans text-sm uppercase tracking-wide">
             {t("servicesCta")}
           </ButtonLink>
         </div>
+
+        {/* A rule-separated list, not cards: the service name carries the
+            weight and the divider does the structural work. */}
+        <ul className="mt-10 border-t border-border-subtle">
+          {SERVICES.map((key) => (
+            <li
+              key={key}
+              className="flex flex-col gap-2 border-b border-border-subtle py-8 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
+            >
+              <h3 className="font-display text-display-md font-light text-text">{t(`service${key}Title`)}</h3>
+              <p className="font-sans text-sm uppercase tracking-[0.12em] text-text-secondary">
+                {t(`service${key}Body`)}
+              </p>
+            </li>
+          ))}
+        </ul>
       </Container>
     </Section>
   );
