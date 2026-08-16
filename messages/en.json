@@ -17,7 +17,6 @@
     "home": "Home",
     "team": "Team",
     "leistungen": "Services",
-    "galerie": "Gallery",
     "kontakt": "Contact"
   },
   "Home": {
@@ -47,11 +46,6 @@
     "categoryFarbe": "Color",
     "categoryPflege": "Care",
     "durationMinutes": "{minutes} min"
-  },
-  "Galerie": {
-    "title": "Gallery",
-    "subtitle": "A look at our work — filterable by stylist.",
-    "filterAll": "All"
   },
   "Kontakt": {
     "title": "Contact",

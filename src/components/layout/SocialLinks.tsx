@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { SALON } from "@/data/salon";
 import { cn } from "@/lib/cn";
 
 // lucide-react dropped brand/logo icons years ago (trademark reasons) — these
@@ -23,8 +24,8 @@ function FacebookIcon() {
 }
 
 const SOCIAL_LINKS = [
-  { key: "instagram", href: "https://instagram.com/salonkupferglanz", Icon: InstagramIcon },
-  { key: "facebook", href: "https://facebook.com/salonkupferglanz", Icon: FacebookIcon },
+  { key: "instagram", href: SALON.instagramUrl, Icon: InstagramIcon },
+  { key: "facebook", href: SALON.facebookUrl, Icon: FacebookIcon },
 ] as const;
 
 export async function SocialLinks({ className }: { className?: string }) {
