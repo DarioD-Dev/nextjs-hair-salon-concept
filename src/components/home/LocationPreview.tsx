@@ -1,5 +1,4 @@
 import { getTranslations } from "next-intl/server";
-import { BookingCta } from "@/components/ui/BookingCta";
 import { Container } from "@/components/ui/Container";
 import { MapEmbed } from "@/components/ui/MapEmbed";
 import { Section } from "@/components/ui/Section";
@@ -9,7 +8,6 @@ import { buttonStyles } from "@/components/ui/buttonStyles";
 export async function LocationPreview() {
   const t = await getTranslations("Home");
   const tHours = await getTranslations("Hours");
-  const tCommon = await getTranslations("Common");
 
   const hours = [
     { day: tHours("weekdays"), time: tHours("weekdaysTime") },
@@ -25,7 +23,13 @@ export async function LocationPreview() {
             <span className="block font-sans text-eyebrow uppercase tracking-[0.22em] text-accent-copper">
               {t("locationTitle")}
             </span>
-            <span className="mt-4 block font-display text-display-md font-light text-text">{SALON.name}</span>
+            {/* Was the salon name again — the third time on this page, and
+                sitting directly under the header wordmark. The district says
+                something the visitor does not already know, and "Mariahilf"
+                and "6. Bezirk" are what people actually search for. */}
+            <span className="mt-4 block font-display text-display-md font-light text-text">
+              {t("locationDistrict")}
+            </span>
           </h2>
           <address className="mt-3 font-sans text-base not-italic leading-relaxed text-text-secondary">
             {SALON.street}
@@ -47,8 +51,12 @@ export async function LocationPreview() {
             ))}
           </dl>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            <BookingCta>{tCommon("bookAppointment")}</BookingCta>
+          {/* Only "plan a route" here. "Book an appointment" already sits in
+              the sticky header a few pixels above, in the hero, and in the
+              closing section — a fourth identical gold pill on one page made
+              all of them count for less, and getting here is the question
+              this section is actually about. */}
+          <div className="mt-8">
             <a
               href={MAPS_DIRECTIONS_URL}
               target="_blank"

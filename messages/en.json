@@ -57,7 +57,8 @@
     "locationHoursTitle": "Opening hours",
     "locationArrival": "Two minutes' walk from U3 Neubaugasse, with tram 49 stopping around the corner. Short-stay parking along the whole street, and the Mariahilfer Straße garage is about five minutes away.",
     "locationRoute": "Get directions",
-    "finalCtaTitle": "Your next appointment starts here."
+    "finalCtaTitle": "Your next appointment starts here.",
+    "locationDistrict": "Mariahilf, Vienna’s 6th district"
   },
   "Hours": {
     "weekdays": "Tue — Fri",
