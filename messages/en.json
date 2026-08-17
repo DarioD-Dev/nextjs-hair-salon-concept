@@ -6,13 +6,13 @@
     "homeDescription": "Salon Kupferglanz in Vienna: individual cuts, balayage and color concepts, care and treatments. Appointments by arrangement."
   },
   "Header": {
+    "home": "{name} — back to the homepage",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "switchLanguageTo": "Switch language to {locale}",
-    "social": {
-      "instagram": "Follow on Instagram",
-      "facebook": "Follow on Facebook"
-    }
+    "menuTitle": "Navigation",
+    "skipToContent": "Skip to content",
+    "callAria": "Call us: {phone}",
+    "switchLanguageTo": "Switch language to {locale}"
   },
   "Nav": {
     "home": "Home",
@@ -25,19 +25,20 @@
     "call": "Call"
   },
   "Home": {
-    "heroEyebrow": "Hair · Color · Style",
+    "heroEyebrow": "Hair salon in Vienna",
     "heroTagline": "Personal style. Professional color. Your salon in Vienna.",
+    "heroSecondaryCta": "Services & prices",
     "quickLocation": "Location",
     "quickHours": "Opening hours",
     "quickBooking": "Appointments",
     "quickBookingValue": "By arrangement",
-    "dnaTitle": "Our DNA",
-    "dna1Title": "Individual",
-    "dna1Body": "Advice and looks that suit you.",
-    "dna2Title": "Precise",
-    "dna2Body": "Cut and color with an eye for detail.",
-    "dna3Title": "Personal",
-    "dna3Body": "Your appointment. Your time. Your style.",
+    "dnaTitle": "How we work",
+    "dna1Title": "Consultation first",
+    "dna1Body": "Every appointment starts with a conversation about hair structure, your routine and how much upkeep you want — free and without obligation, even if you decide against booking.",
+    "dna2Title": "You pick the person",
+    "dna2Body": "You book a stylist with their own focus, not just \"the salon\". Who does what is there to see on the team page.",
+    "dna3Title": "Price before we start",
+    "dna3Body": "You hear what your appointment costs before we begin, not at the till. Every guide price is listed openly.",
     "servicesTitle": "Services",
     "serviceCutTitle": "Cut",
     "serviceCutBody": "Cut · Styling",
@@ -48,11 +49,13 @@
     "servicesCta": "All services & prices",
     "workTitle": "Our work",
     "workBody": "A glimpse of what takes shape here.",
+    "workImageAlt": "Hair styled at Salon Kupferglanz by {name}",
     "teamTitle": "The team",
     "teamBody": "Three stylists, one shared standard: craft with character.",
     "teamCta": "Meet the team",
     "locationTitle": "Visit us",
     "locationHoursTitle": "Opening hours",
+    "locationArrival": "Two minutes' walk from U3 Neubaugasse, with tram 49 stopping around the corner. Short-stay parking along the whole street, and the Mariahilfer Straße garage is about five minutes away.",
     "locationRoute": "Get directions",
     "finalCtaTitle": "Your next appointment starts here."
   },
@@ -68,30 +71,37 @@
   "Team": {
     "title": "Our team",
     "subtitle": "Meet the people behind Salon Kupferglanz — each with their own focus and their own style.",
+    "metaDescription": "The stylists at Salon Kupferglanz in Vienna: the focus, signature and work of Lena Hofer, Markus Weber and Selin Yıldız.",
     "specialtiesLabel": "Specialties",
-    "portfolioLabel": "Work by {name}"
+    "portfolioLabel": "Work by {name}",
+    "workImageAlt": "Hair styled at Salon Kupferglanz by {name}"
   },
   "Leistungen": {
     "title": "Services & Prices",
     "subtitle": "Transparent pricing for every occasion — no surprises.",
+    "metaDescription": "Every price at Salon Kupferglanz in Vienna: women's and men's cuts, balayage, root colour, Olaplex and treatments — with durations and answers to the most common questions.",
     "categoryDamen": "Women",
     "categoryHerren": "Men",
     "categoryFarbe": "Color",
     "categoryPflege": "Care",
     "durationMinutes": "{minutes} min",
     "priceFrom": "from {price}",
-    "disclaimer": "Final cost can vary depending on hair length, effort, and the result you're after."
+    "disclaimer": "Final cost can vary depending on hair length, effort, and the result you're after.",
+    "faqTitle": "Common questions"
   },
   "Kontakt": {
     "title": "Contact",
     "subtitle": "Write to us or give us a call — we'd love to see you.",
+    "metaDescription": "Salon Kupferglanz, Kupfergasse 8, 1060 Vienna: opening hours, phone number, how to get here by underground and tram, plus a contact form.",
+    "detailsTitle": "Salon & directions",
     "addressLabel": "Address",
     "phoneLabel": "Phone",
     "hoursLabel": "Opening hours",
-    "hoursWeekday": "Tue – Fri: 9am – 7pm",
-    "hoursSaturday": "Sat: 9am – 3pm",
-    "hoursClosed": "Sun & Mon: closed",
+    "arrivalLabel": "Getting here & parking",
+    "arrivalBody": "U3 Neubaugasse, two minutes on foot. Tram 49 stops around the corner. Short-stay parking along the whole street, and the Mariahilfer Straße garage is about five minutes away.",
     "emailLabel": "Email",
+    "formTitle": "Write to us",
+    "formIntro": "For a confirmed appointment, a quick call is fastest — messages sent through this form get an answer within one working day.",
     "nameLabel": "Name",
     "messageLabel": "Message",
     "submit": "Send message",

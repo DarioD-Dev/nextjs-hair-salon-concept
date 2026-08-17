@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { Link } from "@/i18n/navigation";
-import { CONTACT_ADDRESS, SALON } from "@/data/salon";
+import { CONTACT_ADDRESS, EMAIL_HREF, PHONE_HREF, SALON } from "@/data/salon";
 import { NAV_ITEMS } from "./navItems";
 
 export async function Footer() {
@@ -36,13 +36,10 @@ export async function Footer() {
             <h2 className="font-sans text-eyebrow uppercase text-accent-copper">{t("contactTitle")}</h2>
             <address className="mt-3 flex flex-col font-sans text-sm not-italic text-text-secondary">
               <span className="py-1">{CONTACT_ADDRESS}</span>
-              <a
-                href={`tel:${SALON.phone.replace(/\s/g, "")}`}
-                className="py-1 transition-colors hover:text-accent-copper"
-              >
+              <a href={PHONE_HREF} className="py-1 transition-colors hover:text-accent-copper">
                 {SALON.phone}
               </a>
-              <a href={`mailto:${SALON.email}`} className="py-1 transition-colors hover:text-accent-copper">
+              <a href={EMAIL_HREF} className="py-1 transition-colors hover:text-accent-copper">
                 {SALON.email}
               </a>
             </address>

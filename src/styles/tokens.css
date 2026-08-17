@@ -16,6 +16,10 @@
 /* ─── Layer 2: semantic. ─── */
 :root {
   --surface-base: var(--sk-petrol-950);
+  /* raised and muted deliberately share one value. In this design elevation is
+     drawn with hairline rules, not with a lighter fill — and the next tone up
+     (#11302c) would push copper text to 4.22:1, under AA. If a raised element
+     ever has to sit inside a muted band, give it a border, not a third tone. */
   --surface-raised: var(--sk-green-900);
   --surface-inverse: var(--sk-ivory-100);
   --surface-muted: var(--sk-green-900);
