@@ -19,18 +19,11 @@ export async function LocationPreview() {
     <Section>
       <Container className="grid gap-12 lg:grid-cols-2 lg:gap-16">
         <div>
-          <h2>
-            <span className="block font-sans text-eyebrow uppercase tracking-[0.22em] text-accent-copper">
-              {t("locationTitle")}
-            </span>
-            {/* Was the salon name again — the third time on this page, and
-                sitting directly under the header wordmark. The district says
-                something the visitor does not already know, and "Mariahilf"
-                and "6. Bezirk" are what people actually search for. */}
-            <span className="mt-4 block font-display text-display-md font-light text-text">
-              {t("locationDistrict")}
-            </span>
-          </h2>
+          {/* One line, not eyebrow + display. The display line used to repeat
+              the salon name — the third time on this page and directly under
+              the header wordmark — so it went; the section label took over its
+              size and its copper. */}
+          <h2 className="font-display text-display-md font-light text-accent-copper">{t("locationTitle")}</h2>
           <address className="mt-3 font-sans text-base not-italic leading-relaxed text-text-secondary">
             {SALON.street}
             <br />
