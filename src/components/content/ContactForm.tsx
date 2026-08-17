@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useActionState } from "react";
+import { useActionState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/Button";
 import { FieldError } from "@/components/ui/FieldError";
 import { Input } from "@/components/ui/Input";
@@ -14,10 +14,24 @@ const initialState: ContactFormState = { status: "idle" };
 export function ContactForm() {
   const t = useTranslations("Kontakt");
   const [state, formAction, pending] = useActionState(submitContactForm, initialState);
+  const successRef = useRef<HTMLParagraphElement>(null);
+
+  // On success the form is replaced by the confirmation. role="status"
+  // announces it, but keyboard focus was left on a submit button that no
+  // longer exists — it fell back to <body>, so the next Tab restarted at the
+  // top of the page. Moving focus to the confirmation keeps the position.
+  useEffect(() => {
+    if (state.status === "success") successRef.current?.focus();
+  }, [state.status]);
 
   if (state.status === "success") {
     return (
-      <p role="status" className="font-sans text-accent-copper">
+      <p
+        ref={successRef}
+        tabIndex={-1}
+        role="status"
+        className="font-sans text-accent-copper outline-none"
+      >
         {t("success")}
       </p>
     );

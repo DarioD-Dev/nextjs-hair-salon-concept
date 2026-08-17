@@ -13,22 +13,31 @@ body {
 }
 
 button:not(:disabled),
-[role="button"] {
+[role="button"],
+summary {
   cursor: pointer;
 }
 
-/* Logo letter-wave: plays once automatically on load (per-letter
-   animation-delay in Logo.tsx), motion-safe only. */
-@media (prefers-reduced-motion: no-preference) {
-  @keyframes logo-wave {
-    0% {
-      transform: translateY(0);
-    }
-    40% {
-      transform: translateY(-0.2em);
-    }
-    100% {
-      transform: translateY(0);
-    }
+/* One focus ring for the whole site, defined once at the root rather than
+   per component. Components that need a different ring (buttons, inputs)
+   still override it locally; everything else — nav links, footer links,
+   icon buttons, the language toggle — previously fell back to whatever the
+   browser drew, which on this dark petrol ground is barely visible. */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Belt and braces for anything animated below: honour the OS setting even
+   where a component forgot its own motion-reduce: variant. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

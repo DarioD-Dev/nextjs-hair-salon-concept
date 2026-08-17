@@ -22,7 +22,9 @@ export async function StylistProfile({
   const t = await getTranslations("Team");
 
   return (
-    <article className="grid items-start gap-8 lg:grid-cols-2 lg:gap-16">
+    // scroll-mt keeps the heading clear of the sticky header when arriving via
+    // the #slug link from the homepage team teaser.
+    <article id={stylist.slug} className="grid scroll-mt-28 items-start gap-8 lg:grid-cols-2 lg:gap-16">
       {/* max-h caps the frame below the viewport height: at a full-width 4:5
           ratio the portrait was taller than the screen on phones, so the
           stylist's face never fit on screen in one piece. */}
@@ -70,7 +72,14 @@ export async function StylistProfile({
           <ul className="grid grid-cols-3 gap-3">
             {stylist.portfolio.map((src) => (
               <li key={src} className="relative aspect-square overflow-hidden">
-                <Image src={src} alt="" fill loading="lazy" sizes="(min-width: 640px) 160px, 30vw" className="object-cover" />
+                <Image
+                  src={src}
+                  alt={t("workImageAlt", { name: stylist.name })}
+                  fill
+                  loading="lazy"
+                  sizes="(min-width: 640px) 160px, 30vw"
+                  className="object-cover"
+                />
               </li>
             ))}
           </ul>

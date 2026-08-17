@@ -6,13 +6,13 @@
     "homeDescription": "Salon Kupferglanz in Wien: individuelle Schnitte, Balayage und Farbkonzepte, Pflege und Treatments. Termine nach Vereinbarung."
   },
   "Header": {
+    "home": "{name} — zur Startseite",
     "openMenu": "Menü öffnen",
     "closeMenu": "Menü schließen",
-    "switchLanguageTo": "Sprache zu {locale} wechseln",
-    "social": {
-      "instagram": "Auf Instagram folgen",
-      "facebook": "Auf Facebook folgen"
-    }
+    "menuTitle": "Navigation",
+    "skipToContent": "Zum Inhalt springen",
+    "callAria": "Anrufen: {phone}",
+    "switchLanguageTo": "Sprache zu {locale} wechseln"
   },
   "Nav": {
     "home": "Start",
@@ -25,19 +25,20 @@
     "call": "Anrufen"
   },
   "Home": {
-    "heroEyebrow": "Haare · Farbe · Stil",
+    "heroEyebrow": "Friseur in Wien",
     "heroTagline": "Persönlicher Stil. Professionelle Farbe. Dein Salon in Wien.",
+    "heroSecondaryCta": "Leistungen & Preise",
     "quickLocation": "Standort",
     "quickHours": "Öffnungszeiten",
     "quickBooking": "Termine",
     "quickBookingValue": "Nach Vereinbarung",
-    "dnaTitle": "Unsere DNA",
-    "dna1Title": "Individuell",
-    "dna1Body": "Beratung und Looks, die zu dir passen.",
-    "dna2Title": "Präzise",
-    "dna2Body": "Schnitt und Farbe mit Liebe zum Detail.",
-    "dna3Title": "Persönlich",
-    "dna3Body": "Dein Termin. Deine Zeit. Dein Stil.",
+    "dnaTitle": "Wie wir arbeiten",
+    "dna1Title": "Beratung zuerst",
+    "dna1Body": "Jeder Termin beginnt mit einem Gespräch über Haarstruktur, Alltag und Pflegeaufwand — kostenlos und unverbindlich, auch wenn du dich danach gegen den Termin entscheidest.",
+    "dna2Title": "Du wählst die Person",
+    "dna2Body": "Du buchst nicht „den Salon\", sondern eine Stylistin oder einen Stylisten mit eigenem Schwerpunkt. Wer wofür steht, siehst du im Team.",
+    "dna3Title": "Preis vor dem Start",
+    "dna3Body": "Was dein Termin kostet, sagen wir dir, bevor wir beginnen — nicht erst an der Kassa. Alle Richtpreise stehen offen in der Preisliste.",
     "servicesTitle": "Leistungen",
     "serviceCutTitle": "Cut",
     "serviceCutBody": "Schnitt · Styling",
@@ -48,11 +49,13 @@
     "servicesCta": "Alle Leistungen & Preise",
     "workTitle": "Unsere Arbeit",
     "workBody": "Ein Ausschnitt aus dem, was bei uns entsteht.",
+    "workImageAlt": "Frisur aus dem Salon Kupferglanz, gestaltet von {name}",
     "teamTitle": "Das Team",
     "teamBody": "Drei Stylist:innen, ein gemeinsamer Anspruch: Handwerk mit Charakter.",
     "teamCta": "Team kennenlernen",
     "locationTitle": "Besuch uns",
     "locationHoursTitle": "Öffnungszeiten",
+    "locationArrival": "Zwei Gehminuten von der U3 Neubaugasse, Straßenbahn 49 hält direkt um die Ecke. Kurzparkzone in der ganzen Gasse, Garage Mariahilfer Straße rund fünf Minuten entfernt.",
     "locationRoute": "Route planen",
     "finalCtaTitle": "Dein nächster Termin beginnt hier."
   },
@@ -68,30 +71,37 @@
   "Team": {
     "title": "Unser Team",
     "subtitle": "Lern die Menschen hinter Salon Kupferglanz kennen — jede und jeder mit eigenem Schwerpunkt und eigenem Stil.",
+    "metaDescription": "Die Stylist:innen im Salon Kupferglanz in Wien: Schwerpunkte, Handschrift und Arbeiten von Lena Hofer, Markus Weber und Selin Yıldız.",
     "specialtiesLabel": "Schwerpunkte",
-    "portfolioLabel": "Arbeiten von {name}"
+    "portfolioLabel": "Arbeiten von {name}",
+    "workImageAlt": "Frisur aus dem Salon Kupferglanz, gestaltet von {name}"
   },
   "Leistungen": {
     "title": "Leistungen & Preise",
     "subtitle": "Transparente Preise für jeden Anlass — ganz ohne Überraschungen.",
+    "metaDescription": "Alle Preise des Salon Kupferglanz in Wien: Damen- und Herrenschnitt, Balayage, Ansatzfarbe, Olaplex und Treatments — mit Dauer und Antworten auf die häufigsten Fragen.",
     "categoryDamen": "Damen",
     "categoryHerren": "Herren",
     "categoryFarbe": "Farbe",
     "categoryPflege": "Pflege",
     "durationMinutes": "{minutes} Min.",
     "priceFrom": "ab {price}",
-    "disclaimer": "Die endgültigen Kosten können je nach Haarlänge, Aufwand und gewünschtem Ergebnis variieren."
+    "disclaimer": "Die endgültigen Kosten können je nach Haarlänge, Aufwand und gewünschtem Ergebnis variieren.",
+    "faqTitle": "Häufige Fragen"
   },
   "Kontakt": {
     "title": "Kontakt",
     "subtitle": "Schreib uns oder ruf an — wir freuen uns auf dich.",
+    "metaDescription": "Salon Kupferglanz, Kupfergasse 8, 1060 Wien: Öffnungszeiten, Telefonnummer, Anfahrt mit U-Bahn und Straßenbahn sowie Kontaktformular.",
+    "detailsTitle": "Salon & Anfahrt",
     "addressLabel": "Adresse",
     "phoneLabel": "Telefon",
     "hoursLabel": "Öffnungszeiten",
-    "hoursWeekday": "Di – Fr: 9 – 19 Uhr",
-    "hoursSaturday": "Sa: 9 – 15 Uhr",
-    "hoursClosed": "So & Mo: geschlossen",
+    "arrivalLabel": "Anfahrt & Parken",
+    "arrivalBody": "U3 Neubaugasse, zwei Gehminuten. Straßenbahn 49 hält um die Ecke. Kurzparkzone in der ganzen Gasse, Garage Mariahilfer Straße rund fünf Minuten entfernt.",
     "emailLabel": "E-Mail",
+    "formTitle": "Schreib uns",
+    "formIntro": "Für einen fixen Termin ruf am besten kurz an — über das Formular melden wir uns innerhalb eines Werktags zurück.",
     "nameLabel": "Name",
     "messageLabel": "Nachricht",
     "submit": "Nachricht senden",

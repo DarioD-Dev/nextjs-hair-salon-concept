@@ -12,11 +12,14 @@ export function BookingCta({
   variant,
   size,
   className,
+  onNavigate,
 }: {
   children: React.ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
   className?: string;
+  /** Callers inside an overlay use this to close it on navigation. */
+  onNavigate?: () => void;
 }) {
   if (SALON.bookingUrl) {
     return (
@@ -24,6 +27,7 @@ export function BookingCta({
         href={SALON.bookingUrl}
         target="_blank"
         rel="noreferrer noopener"
+        onClick={onNavigate}
         className={buttonStyles({ variant, size, className })}
       >
         {children}
@@ -32,7 +36,7 @@ export function BookingCta({
   }
 
   return (
-    <ButtonLink href="/kontakt" variant={variant} size={size} className={className}>
+    <ButtonLink href="/kontakt" variant={variant} size={size} className={className} onClick={onNavigate}>
       {children}
     </ButtonLink>
   );

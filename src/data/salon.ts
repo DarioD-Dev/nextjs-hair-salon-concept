@@ -20,6 +20,13 @@ export const SALON = {
 
 export const CONTACT_ADDRESS = `${SALON.street}, ${SALON.postalCode} ${SALON.city}`;
 
+export const PHONE_HREF = `tel:${SALON.phone.replace(/[^\d+]/g, "")}`;
+export const EMAIL_HREF = `mailto:${SALON.email}`;
+
+export const MAPS_EMBED_SRC = `https://www.google.com/maps?q=${encodeURIComponent(
+  CONTACT_ADDRESS,
+)}&output=embed`;
+
 // dayOfWeek uses schema.org day names so the LocalBusiness JSON-LD can be
 // generated from this same source instead of a parallel hardcoded list.
 export const OPENING_HOURS = [

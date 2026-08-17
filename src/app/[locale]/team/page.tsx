@@ -7,13 +7,26 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { getStylists } from "@/data/stylists";
 import type { Locale } from "@/data/types";
+import { buildAlternates, buildOpenGraph } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: Locale }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Team" });
-  return { title: t("title"), description: t("subtitle") };
+  const tMeta = await getTranslations({ locale, namespace: "Meta" });
+  return {
+    title: t("title"),
+    description: t("metaDescription"),
+    alternates: buildAlternates("/team", locale),
+    openGraph: buildOpenGraph({
+      title: t("title"),
+      description: t("metaDescription"),
+      siteName: tMeta("title"),
+      locale,
+      href: "/team",
+    }),
+  };
 }
 
 export default async function TeamPage({ params }: Props) {

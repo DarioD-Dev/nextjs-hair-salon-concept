@@ -1,44 +1,74 @@
 import { getTranslations } from "next-intl/server";
-import { Rule } from "@/components/ui/Rule";
-import { CONTACT_ADDRESS, SALON } from "@/data/salon";
+import { CONTACT_ADDRESS, EMAIL_HREF, PHONE_HREF, SALON } from "@/data/salon";
 
+// A definition list, not a stack of unlabelled paragraphs: "Telefon" is the
+// term and the number is its definition, which is exactly what a screen
+// reader then announces as a pair.
 export async function ContactDetails() {
   const t = await getTranslations("Kontakt");
+  const tHours = await getTranslations("Hours");
 
   return (
-    <div className="flex flex-col gap-6">
-      <div>
-        <p className="font-sans text-xs uppercase tracking-wide text-text-secondary">{t("addressLabel")}</p>
-        <p className="font-display text-lg text-text">{SALON.name}</p>
-        <p className="font-sans text-text-secondary">{CONTACT_ADDRESS}</p>
-      </div>
-      <Rule className="w-12 opacity-50" />
-      <div>
-        <p className="font-sans text-xs uppercase tracking-wide text-text-secondary">{t("phoneLabel")}</p>
-        <a
-          href={`tel:${SALON.phone.replace(/\s/g, "")}`}
-          className="font-sans text-text-secondary transition-colors hover:text-accent-copper"
-        >
-          {SALON.phone}
-        </a>
-      </div>
-      <Rule className="w-12 opacity-50" />
-      <div>
-        <p className="font-sans text-xs uppercase tracking-wide text-text-secondary">{t("emailLabel")}</p>
-        <a
-          href={`mailto:${SALON.email}`}
-          className="font-sans text-text-secondary transition-colors hover:text-accent-copper"
-        >
-          {SALON.email}
-        </a>
-      </div>
-      <Rule className="w-12 opacity-50" />
-      <div>
-        <p className="font-sans text-xs uppercase tracking-wide text-text-secondary">{t("hoursLabel")}</p>
-        <p className="font-sans text-text-secondary">{t("hoursWeekday")}</p>
-        <p className="font-sans text-text-secondary">{t("hoursSaturday")}</p>
-        <p className="font-sans text-text-secondary">{t("hoursClosed")}</p>
-      </div>
+    <div>
+      <h2 className="font-sans text-eyebrow uppercase tracking-[0.22em] text-accent-copper">{t("detailsTitle")}</h2>
+
+      <dl className="mt-6 border-t border-border-subtle font-sans">
+        <div className="border-b border-border-subtle py-4">
+          <dt className="text-xs uppercase tracking-wide text-text-secondary">{t("addressLabel")}</dt>
+          <dd className="mt-1 text-text">
+            <span className="font-display text-lg">{SALON.name}</span>
+            <br />
+            {CONTACT_ADDRESS}
+          </dd>
+        </div>
+
+        <div className="border-b border-border-subtle py-4">
+          <dt className="text-xs uppercase tracking-wide text-text-secondary">{t("phoneLabel")}</dt>
+          <dd className="mt-1">
+            <a
+              href={PHONE_HREF}
+              className="inline-block py-1 text-text transition-colors hover:text-accent-copper"
+            >
+              {SALON.phone}
+            </a>
+          </dd>
+        </div>
+
+        <div className="border-b border-border-subtle py-4">
+          <dt className="text-xs uppercase tracking-wide text-text-secondary">{t("emailLabel")}</dt>
+          <dd className="mt-1">
+            <a href={EMAIL_HREF} className="inline-block py-1 text-text transition-colors hover:text-accent-copper">
+              {SALON.email}
+            </a>
+          </dd>
+        </div>
+
+        {/* Hours read from the Hours namespace, the same source the homepage
+            uses — they were previously written out a second time in the
+            Kontakt namespace and could drift apart. */}
+        <div className="border-b border-border-subtle py-4">
+          <dt className="text-xs uppercase tracking-wide text-text-secondary">{t("hoursLabel")}</dt>
+          <dd className="mt-1 text-text">
+            <span className="flex justify-between gap-6">
+              <span>{tHours("weekdays")}</span>
+              <span className="text-text-secondary">{tHours("weekdaysTime")}</span>
+            </span>
+            <span className="mt-1 flex justify-between gap-6">
+              <span>{tHours("saturday")}</span>
+              <span className="text-text-secondary">{tHours("saturdayTime")}</span>
+            </span>
+            <span className="mt-1 flex justify-between gap-6">
+              <span>{tHours("sunday")}</span>
+              <span className="text-text-secondary">{tHours("sundayTime")}</span>
+            </span>
+          </dd>
+        </div>
+
+        <div className="border-b border-border-subtle py-4">
+          <dt className="text-xs uppercase tracking-wide text-text-secondary">{t("arrivalLabel")}</dt>
+          <dd className="mt-1 max-w-sm leading-relaxed text-text-secondary">{t("arrivalBody")}</dd>
+        </div>
+      </dl>
     </div>
   );
 }
