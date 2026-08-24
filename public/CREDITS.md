@@ -1,22 +1,24 @@
 # Bild-Credits
 
-Alle Fotos (Stylist:innen-Porträts, Portfolio, Galerie) sind unter der [Unsplash-Lizenz](https://unsplash.com/license) lizenziert (kostenlose kommerzielle Nutzung, keine Zuschreibung erforderlich) und werden direkt vom Unsplash-CDN eingebunden, nicht lokal gespeichert. Zur Nachverfolgung der Foto-ID (z.B. für Fotograf:in-Zuschreibung) einfach `https://unsplash.com/photos/<foto-id>` aufrufen — die IDs entsprechen genau den in `src/data/stylists.ts` verwendeten.
+Alle Fotos (Stylist:innen-Porträts, Portfolio, Hero) sind unter der [Unsplash-Lizenz](https://unsplash.com/license) lizenziert (kostenlose kommerzielle Nutzung, keine Zuschreibung erforderlich) und liegen lokal unter `public/images/`. Zur Nachverfolgung der Foto-ID (z.B. für Fotograf:in-Zuschreibung) einfach `https://unsplash.com/photos/<foto-id>` aufrufen.
 
-Verwendete Foto-IDs (Stand 13.08.2026):
+**21.08.2026 — von Live-Hotlinking auf lokal gehostet umgestellt:** Die Bilder wurden zuvor direkt vom Unsplash-CDN nachgeladen (`images.unsplash.com` als `remotePattern`). Unter echter Last kam es dabei wiederholt zu 500/504-Fehlern beim serverseitigen Abruf durch den Next.js-Image-Optimizer — sichtbar als fehlende Stylist:innen-Fotos. Jetzt einmalig heruntergeladen (1600px, jpg) und unter `public/images/team/` bzw. `public/images/hero/` abgelegt; keine Laufzeit-Abhängigkeit von Unsplash mehr.
 
-- photo-1506863530036-1efeddceb993 (Lena Hofer, Porträt)
-- photo-1567894340315-735d7c361db0 (Markus Weber, Porträt)
-- photo-1617690825153-8bb0a8e3c911 (Selin Yıldız, Porträt)
-- photo-1605497788044-5a32c7078486 (Lena, Portfolio)
-- photo-1635273051937-a0ddef9573b6 (Lena, Portfolio)
-- photo-1711274091943-5aae912e6985 (Lena, Portfolio)
-- photo-1503951914875-452162b0f3f1 (Markus, Portfolio)
-- photo-1657105052497-f996284ffff8 (Markus, Portfolio)
-- photo-1514336937476-a5b961020a5c (Markus, Portfolio)
-- photo-1593702288056-7927b442d0fa (Selin, Portfolio)
-- photo-1711274093746-b588a17d2716 (Selin, Portfolio)
-- photo-1654097801176-cb1795fd0c5e (Selin, Portfolio)
-- photo-1781450090585-1a511b7066d9 (Startseite Hero, Salon-Interieur)
+Verwendete Fotos (Stand 21.08.2026):
+
+- `team/lena-portrait.jpg` — photo-1506863530036-1efeddceb993 (Lena Hofer, Porträt)
+- `team/markus-portrait.jpg` — photo-1567894340315-735d7c361db0 (Markus Weber, Porträt)
+- `team/selin-portrait.jpg` — photo-1617690825153-8bb0a8e3c911 (Selin Yıldız, Porträt)
+- `team/lena-portfolio-1.jpg` — photo-1605497788044-5a32c7078486 (Lena, Portfolio)
+- `team/lena-portfolio-2.jpg` — photo-1635273051937-a0ddef9573b6 (Lena, Portfolio)
+- `team/lena-portfolio-3.jpg` — photo-1711274091943-5aae912e6985 (Lena, Portfolio)
+- `team/markus-portfolio-1.jpg` — photo-1503951914875-452162b0f3f1 (Markus, Portfolio)
+- `team/markus-portfolio-2.jpg` — photo-1657105052497-f996284ffff8 (Markus, Portfolio)
+- `team/markus-portfolio-3.jpg` — photo-1514336937476-a5b961020a5c (Markus, Portfolio)
+- `team/selin-portfolio-1.jpg` — photo-1593702288056-7927b442d0fa (Selin, Portfolio)
+- `team/selin-portfolio-2.jpg` — photo-1711274093746-b588a17d2716 (Selin, Portfolio)
+- `team/selin-portfolio-3.jpg` — photo-1654097801176-cb1795fd0c5e (Selin, Portfolio)
+- `hero/salon-interior.jpg` — photo-1781450090585-1a511b7066d9 (Startseite Hero, Salon-Interieur)
 
 **13.08.2026 — Markus-Weber-Bug behoben:** Porträt und zwei der drei Portfolio-Fotos zeigten fälschlich eine Frau bzw. eine allgemeine Salon-Szene ohne erkennbaren Bezug zu ihm — vor dem Ersetzen jedes Bild visuell geprüft (heruntergeladen + angeschaut), nicht nur die Text-Beschreibung der Suche vertraut.
 

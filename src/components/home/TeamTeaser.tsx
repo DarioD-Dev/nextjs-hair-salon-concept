@@ -45,7 +45,7 @@ export async function TeamTeaser({ locale }: { locale: Locale }) {
                     fill
                     loading="lazy"
                     sizes="(min-width: 1024px) 20vw, (min-width: 640px) 30vw, 100vw"
-                    className="object-cover"
+                    className="object-cover grayscale transition-[filter] duration-500 group-hover:grayscale-0 motion-reduce:transition-none"
                   />
                 </div>
                 <p className="mt-4 font-display text-lg font-light text-text transition-colors group-hover:text-accent-copper">

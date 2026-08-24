@@ -9,12 +9,6 @@ const nextConfig: NextConfig = {
     // and AVIF lands well below WebP at the same quality. Browsers without
     // support fall through to WebP and then to the original.
     formats: ["image/avif", "image/webp"],
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-    ],
   },
 };
 

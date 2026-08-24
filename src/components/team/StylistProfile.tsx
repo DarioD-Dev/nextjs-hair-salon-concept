@@ -41,7 +41,7 @@ export async function StylistProfile({
           priority={priority}
           loading={priority ? undefined : "lazy"}
           sizes="(min-width: 1024px) 50vw, 100vw"
-          className="object-cover"
+          className="object-cover grayscale"
         />
       </div>
 
@@ -71,14 +71,14 @@ export async function StylistProfile({
           <VisuallyHidden>{t("portfolioLabel", { name: stylist.name })}</VisuallyHidden>
           <ul className="grid grid-cols-3 gap-3">
             {stylist.portfolio.map((src) => (
-              <li key={src} className="relative aspect-square overflow-hidden">
+              <li key={src} className="group relative aspect-square overflow-hidden">
                 <Image
                   src={src}
                   alt={t("workImageAlt", { name: stylist.name })}
                   fill
                   loading="lazy"
                   sizes="(min-width: 640px) 160px, 30vw"
-                  className="object-cover"
+                  className="object-cover grayscale transition-[filter] duration-500 group-hover:grayscale-0 motion-reduce:transition-none"
                 />
               </li>
             ))}
