@@ -5,7 +5,7 @@ import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Container } from "@/components/ui/Container";
 import { SALON } from "@/data/salon";
 
-const HERO_IMAGE = "https://images.unsplash.com/photo-1781450090585-1a511b7066d9?w=1920&q=75&auto=format&fit=crop";
+const HERO_IMAGE = "/images/hero/salon-interior.jpg";
 
 export async function Hero() {
   const t = await getTranslations("Home");
@@ -23,7 +23,7 @@ export async function Hero() {
         priority
         fetchPriority="high"
         sizes="100vw"
-        className="-z-10 object-cover opacity-45"
+        className="-z-10 object-cover opacity-45 grayscale"
       />
       {/* Vertical gradient rather than a flat scrim: keeps the top of the photo
           readable while anchoring the headline in solid dark at the bottom. */}

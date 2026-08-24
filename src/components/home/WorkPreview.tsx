@@ -37,14 +37,14 @@ export async function WorkPreview({ locale }: { locale: Locale }) {
             spacing, not from tiles of differing sizes. */}
         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
           {images.map((image) => (
-            <div key={image.src} className="relative aspect-[4/5] overflow-hidden">
+            <div key={image.src} className="group relative aspect-[4/5] overflow-hidden">
               <Image
                 src={image.src}
                 alt={t("workImageAlt", { name: image.by })}
                 fill
                 loading="lazy"
                 sizes="(min-width: 640px) 23vw, 45vw"
-                className="object-cover"
+                className="object-cover grayscale transition-[filter] duration-500 group-hover:grayscale-0 motion-reduce:transition-none"
               />
             </div>
           ))}
