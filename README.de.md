@@ -2,7 +2,7 @@
 
 # Salon Kupferglanz — Friseursalon (Konzept)
 
-Eine fiktive Konzeptseite für einen Wiener Friseursalon, umgesetzt als vollständig responsives, mehrseitiges Next.js-Frontend. Anders als eine einzelne Scroll-Landingpage ist die Seite so aufgebaut, wie eine echte Salon-Website aufgebaut sein sollte: eine Team-Seite mit einzelnen Stylist:innen-Portfolios, eine verlinkbare Preisliste, eine Galerie und Kontaktdaten.
+Eine fiktive Konzeptseite für einen Wiener Friseursalon, umgesetzt als vollständig responsives, mehrseitiges Next.js-Frontend. Anders als eine einzelne Scroll-Landingpage ist die Seite so aufgebaut, wie eine echte Salon-Website aufgebaut sein sollte: eine Team-Seite mit einzelnen Stylist:innen-Portfolios, eine verlinkbare Preisliste und Kontaktdaten.
 
 > Dies ist ein Konzept-/Portfolio-Projekt. "Salon Kupferglanz" ist ein fiktives Unternehmen — Stylist:innen, Preise und Bewertungen sind erfunden, hinter der Seite steckt kein echtes Buchungssystem.
 
@@ -14,12 +14,13 @@ Die gesamte Farbpalette folgt einer einzigen Idee: **Kupfer in zwei Zuständen.*
 
 ## Funktionen
 
-- Mehrseitiges Routing (Start, Team, Leistungen, Galerie, Kontakt) — kein One-Page-Scroller
+- Mehrseitiges Routing (Start, Team, Leistungen, Kontakt) — kein One-Page-Scroller
 - Individuelle Stylist:innen-Profile mit eigenem Mini-Portfolio und Spezialisierungen
-- Kategorisierte Preisliste (Damen, Herren, Farbe, Pflege)
+- Kategorisierte Preisliste (Damen, Herren, Farbe, Pflege), direkt darunter ein FAQ gegen die typischen Einstiegszweifel
 - Deutsche/englische Oberfläche via `next-intl`, mit lokalisierten Routen (`/de/leistungen`, `/en/services`)
-- Light- und Dark-Theme — Dark ist hier der Standard, passend zur editorialen Stimmung des Salons
-- Vollständig responsiv (Mobile, Tablet, Desktop)
+- Dunkles, editoriales Theme — bewusst kein Light Mode, passend zur Stimmung des Salons
+- Vollständig responsiv (Mobile, Tablet, Desktop), mit sticky Anruf-/Buchungsleiste auf Mobile
+- Monochrome Fotografie mit Farb-Reveal bei Hover, damit ein gemischtes Farb-/S/W-Fotoset (siehe `public/CREDITS.md`) trotzdem wie ein einheitlicher Look wirkt
 
 ## Tech-Stack
 
@@ -27,8 +28,7 @@ Die gesamte Farbpalette folgt einer einzigen Idee: **Kupfer in zwei Zuständen.*
 - React 19 + TypeScript
 - Tailwind CSS v4 mit dreischichtigem Design-Token-System
 - [next-intl](https://next-intl.dev/) für Internationalisierung
-- [next-themes](https://github.com/pacocoursey/next-themes) für den Theme-Wechsel
-- [Motion](https://motion.dev/) für Interaktionsdetails
+- [Resend](https://resend.com/) für das Kontaktformular (optional, siehe unten)
 
 ## Erste Schritte
 
@@ -38,6 +38,16 @@ npm run dev
 ```
 
 Danach [http://localhost:3000](http://localhost:3000) öffnen.
+
+### Kontaktformular — E-Mail-Versand
+
+Ohne weitere Einrichtung validiert das Formular korrekt, loggt die Nachricht aber nur in die Server-Konsole — nichts geht verloren, aber es wird auch nichts verschickt. Damit es wirklich mailt:
+
+1. Kostenlosen [Resend](https://resend.com/)-Account + API-Key anlegen.
+2. In `.env.local` ergänzen: `RESEND_API_KEY=re_...`
+3. Optional `CONTACT_FROM_EMAIL` setzen, sobald eine verifizierte Absender-Domain existiert (Standard ist Resends geteilte Test-Adresse).
+
+Nachrichten gehen an `SALON.email` (`src/data/salon.ts`), die Adresse der/des Besuchenden wird als Reply-To gesetzt.
 
 ## Credits
 
