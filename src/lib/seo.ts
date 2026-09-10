@@ -6,7 +6,12 @@ import type { Locale } from "@/data/types";
 // Single place the absolute site origin comes from. Without it Next renders
 // canonical and Open Graph URLs relative, which makes them useless to both
 // crawlers and link previews.
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://salon-kupferglanz.vercel.app";
+//
+// The deployment is named after this repository, not after the fictional
+// salon: these are concept demos, and a made-up business name in the URL
+// reads like a real client site rather than a study.
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://nextjs-hair-salon-concept.vercel.app";
 
 type Href = Parameters<typeof getPathname>[0]["href"];
 
