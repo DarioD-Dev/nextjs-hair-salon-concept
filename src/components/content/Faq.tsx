@@ -15,7 +15,9 @@ export function Faq({
   return (
     <Section tone="muted" className="border-t border-border-subtle">
       <Container>
-        <h2 className="font-sans text-eyebrow uppercase tracking-[0.22em] text-accent-copper">{title}</h2>
+        <h2 className="font-sans text-eyebrow uppercase tracking-[0.22em] text-accent-copper">
+          {title}
+        </h2>
         <div className="mt-10 border-t border-border-subtle">
           {items.map((item) => (
             <details key={item.id} className="group border-b border-border-subtle">
@@ -27,7 +29,9 @@ export function Faq({
                   className="shrink-0 text-accent-copper transition-transform duration-300 group-open:rotate-45 motion-reduce:transition-none"
                 />
               </summary>
-              <p className="max-w-2xl pb-6 font-sans text-sm leading-relaxed text-text-secondary">{item.answer}</p>
+              <p className="max-w-2xl pb-6 font-sans text-sm leading-relaxed text-text-secondary">
+                {item.answer}
+              </p>
             </details>
           ))}
         </div>

@@ -13,12 +13,17 @@ import { getServicesByCategory, SERVICE_CATEGORIES } from "@/data/services";
 import type { ServiceCategory as ServiceCategoryType } from "@/data/types";
 import { buildAlternates, buildOpenGraph } from "@/lib/seo";
 
-const CATEGORY_LABEL_KEY: Record<ServiceCategoryType, string> = {
+// `as const satisfies` statt einer Record<..., string>-Annotation: Die
+// Annotation verbreiterte die Werte zu `string` und warf damit genau die
+// Information weg, die t() zum Prüfen des Schlüssels braucht — der Aufruf
+// unten war deshalb ungeprüft. `satisfies` behält die Literaltypen und stellt
+// trotzdem sicher, dass jede Kategorie genau einmal vorkommt.
+const CATEGORY_LABEL_KEY = {
   damen: "categoryDamen",
   herren: "categoryHerren",
   farbe: "categoryFarbe",
   pflege: "categoryPflege",
-};
+} as const satisfies Record<ServiceCategoryType, string>;
 
 export async function generateMetadata({
   params,

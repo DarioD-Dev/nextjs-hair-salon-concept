@@ -40,7 +40,8 @@ export function ContactForm() {
   const nameInvalid = Boolean(state.fieldErrors?.name);
   const emailInvalid = Boolean(state.fieldErrors?.email);
   const messageInvalid = Boolean(state.fieldErrors?.message);
-  const hasUnattributedError = state.status === "error" && !nameInvalid && !emailInvalid && !messageInvalid;
+  const hasUnattributedError =
+    state.status === "error" && !nameInvalid && !emailInvalid && !messageInvalid;
 
   return (
     <form action={formAction} className="flex flex-col gap-4">

@@ -11,5 +11,7 @@ export function FaqJsonLd({ items }: { items: { question: string; answer: string
     })),
   };
 
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
+  return (
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+  );
 }

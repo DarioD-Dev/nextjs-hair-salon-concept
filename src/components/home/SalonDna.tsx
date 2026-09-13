@@ -20,7 +20,9 @@ export async function SalonDna() {
           {ITEMS.map((n) => (
             <li key={n} className="border-t border-border-subtle pt-6">
               <span className="font-display text-sm text-accent-copper">0{n}</span>
-              <h3 className="mt-4 font-display text-2xl font-light text-text">{t(`dna${n}Title`)}</h3>
+              <h3 className="mt-4 font-display text-2xl font-light text-text">
+                {t(`dna${n}Title`)}
+              </h3>
               <p className="mt-3 max-w-sm font-sans text-sm leading-relaxed text-text-secondary">
                 {t(`dna${n}Body`)}
               </p>

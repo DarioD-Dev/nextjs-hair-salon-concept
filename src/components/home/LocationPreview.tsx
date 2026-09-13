@@ -23,7 +23,9 @@ export async function LocationPreview() {
               the salon name — the third time on this page and directly under
               the header wordmark — so it went; the section label took over its
               size and its copper. */}
-          <h2 className="font-display text-display-md font-light text-accent-copper">{t("locationTitle")}</h2>
+          <h2 className="font-display text-display-md font-light text-accent-copper">
+            {t("locationTitle")}
+          </h2>
           <address className="mt-3 font-sans text-base not-italic leading-relaxed text-text-secondary">
             {SALON.street}
             <br />
@@ -32,12 +34,19 @@ export async function LocationPreview() {
           {/* "How do I get there and where do I park" is the question that
               decides whether a local visitor comes at all — it used to be
               answered nowhere on the site. */}
-          <p className="mt-4 max-w-sm font-sans text-sm leading-relaxed text-text-secondary">{t("locationArrival")}</p>
+          <p className="mt-4 max-w-sm font-sans text-sm leading-relaxed text-text-secondary">
+            {t("locationArrival")}
+          </p>
 
-          <h3 className="mt-10 font-sans text-eyebrow uppercase text-accent-copper">{t("locationHoursTitle")}</h3>
+          <h3 className="mt-10 font-sans text-eyebrow uppercase text-accent-copper">
+            {t("locationHoursTitle")}
+          </h3>
           <dl className="mt-4 max-w-sm border-t border-border-subtle">
             {hours.map((entry) => (
-              <div key={entry.day} className="flex justify-between border-b border-border-subtle py-3">
+              <div
+                key={entry.day}
+                className="flex justify-between border-b border-border-subtle py-3"
+              >
                 <dt className="font-sans text-sm text-text">{entry.day}</dt>
                 <dd className="font-sans text-sm text-text-secondary">{entry.time}</dd>
               </div>

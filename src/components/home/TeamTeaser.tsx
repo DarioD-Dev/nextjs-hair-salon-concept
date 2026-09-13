@@ -20,7 +20,9 @@ export async function TeamTeaser({ locale }: { locale: Locale }) {
             <span className="block font-sans text-eyebrow uppercase tracking-[0.22em] text-accent-copper">
               {t("teamTitle")}
             </span>
-            <span className="mt-4 block font-display text-display-md font-light text-text">{t("teamBody")}</span>
+            <span className="mt-4 block font-display text-display-md font-light text-text">
+              {t("teamBody")}
+            </span>
           </h2>
           <ButtonLink href="/team" variant="secondary" className="mt-8">
             {t("teamCta")}
@@ -51,7 +53,9 @@ export async function TeamTeaser({ locale }: { locale: Locale }) {
                 <p className="mt-4 font-display text-lg font-light text-text transition-colors group-hover:text-accent-copper">
                   {stylist.name}
                 </p>
-                <p className="font-sans text-xs uppercase tracking-[0.12em] text-accent-copper">{stylist.role}</p>
+                <p className="font-sans text-xs uppercase tracking-[0.12em] text-accent-copper">
+                  {stylist.role}
+                </p>
               </a>
             </li>
           ))}

@@ -33,7 +33,9 @@ export async function Footer() {
           </nav>
 
           <div>
-            <h2 className="font-sans text-eyebrow uppercase text-accent-copper">{t("contactTitle")}</h2>
+            <h2 className="font-sans text-eyebrow uppercase text-accent-copper">
+              {t("contactTitle")}
+            </h2>
             <address className="mt-3 flex flex-col font-sans text-sm not-italic text-text-secondary">
               <span className="py-1">{CONTACT_ADDRESS}</span>
               <a href={PHONE_HREF} className="py-1 transition-colors hover:text-accent-copper">
@@ -46,7 +48,9 @@ export async function Footer() {
           </div>
 
           <div>
-            <h2 className="font-sans text-eyebrow uppercase text-accent-copper">{t("followTitle")}</h2>
+            <h2 className="font-sans text-eyebrow uppercase text-accent-copper">
+              {t("followTitle")}
+            </h2>
             <ul className="mt-3 flex flex-col font-sans text-sm text-text-secondary">
               <li>
                 <a

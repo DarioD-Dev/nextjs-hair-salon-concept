@@ -30,7 +30,9 @@ export async function WorkPreview({ locale }: { locale: Locale }) {
           <span className="block font-sans text-eyebrow uppercase tracking-[0.22em] text-accent-copper">
             {t("workTitle")}
           </span>
-          <span className="mt-4 block font-display text-display-md font-light text-text">{t("workBody")}</span>
+          <span className="mt-4 block font-display text-display-md font-light text-text">
+            {t("workBody")}
+          </span>
         </h2>
 
         {/* One ratio for every frame — the rhythm comes from the grid and the
