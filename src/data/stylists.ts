@@ -76,7 +76,11 @@ export async function getStylists(locale: Locale): Promise<ResolvedStylist[]> {
   return stylists.map((stylist) => resolve(stylist, locale));
 }
 
-export async function getStylist(locale: Locale, slug: string): Promise<ResolvedStylist | null> {
-  const stylist = stylists.find((s) => s.slug === slug);
-  return stylist ? resolve(stylist, locale) : null;
-}
+// Hier stand bis 13.09.2026 ein getStylist(locale, slug) für eine
+// Detailseite /team/[slug], die es nie gab: einmal definiert, nirgends
+// aufgerufen. Entfernt statt aufgehoben — Code, der auf eine Route wartet,
+// die niemand beschlossen hat, ist keine Vorbereitung, sondern eine falsche
+// Fährte beim nächsten Lesen.
+//
+// Das slug-Feld bleibt: Es ist die Anker-ID, über die die Startseite
+// (TeamTeaser) auf das jeweilige Profil der Team-Seite verlinkt.
