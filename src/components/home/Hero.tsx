@@ -39,11 +39,21 @@ export async function Hero() {
                 separate <p> above it: "Friseur in Wien" is the phrase people
                 actually search for, and the brand name alone says nothing
                 about what this business does. */}
+            {/* Die {" "} zwischen den Spans sind notwendig und dürfen nicht
+                wegoptimiert werden: JSX verwirft Leerraum, der eine
+                Zeilenschaltung enthält. Ohne sie lautete der textContent
+                "Friseur in WienSalonKupferglanz" — der Firmenname war also
+                für alles, was den rohen Textknoten liest, ein einziges Wort.
+                innerText und die Darstellung waren die ganze Zeit korrekt,
+                deshalb fiel es beim Hinsehen nicht auf.
+
+                Gerendert ändert sich dadurch nichts: Leerraum zwischen zwei
+                Blockboxen wird beim Layout ohnehin entfernt. */}
             <h1 className="font-display text-display-xl font-light text-text">
               <span className="block font-sans text-eyebrow uppercase tracking-[0.22em] text-accent-copper">
                 {t("heroEyebrow")}
-              </span>
-              <span className="mt-6 block">Salon</span>
+              </span>{" "}
+              <span className="mt-6 block">Salon</span>{" "}
               <span className="block text-accent-copper">Kupferglanz</span>
             </h1>
             <p className="mt-8 max-w-md font-sans text-lg leading-relaxed text-text-secondary">
