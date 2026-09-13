@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { assertLocale } from "@/i18n/locale";
 import { FinalCta } from "@/components/home/FinalCta";
 import { Hero } from "@/components/home/Hero";
 import { LocationPreview } from "@/components/home/LocationPreview";
@@ -9,13 +10,10 @@ import { ServicesOverview } from "@/components/home/ServicesOverview";
 import { TeamTeaser } from "@/components/home/TeamTeaser";
 import { WorkPreview } from "@/components/home/WorkPreview";
 import { LocalBusinessJsonLd } from "@/components/seo/LocalBusinessJsonLd";
-import type { Locale } from "@/data/types";
 import { absoluteUrl, buildAlternates, buildOpenGraph } from "@/lib/seo";
 
-type Props = { params: Promise<{ locale: Locale }> };
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata({ params }: PageProps<"/[locale]">): Promise<Metadata> {
+  const locale = assertLocale((await params).locale);
   const t = await getTranslations({ locale, namespace: "Meta" });
   const tMeta = await getTranslations({ locale, namespace: "Meta" });
   return {
@@ -32,8 +30,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function Home({ params }: Props) {
-  const { locale } = await params;
+export default async function Home({ params }: PageProps<"/[locale]">) {
+  const locale = assertLocale((await params).locale);
   setRequestLocale(locale);
 
   return (

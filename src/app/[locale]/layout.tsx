@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { notFound } from "next/navigation";
+import { assertLocale } from "@/i18n/locale";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileActionBar } from "@/components/layout/MobileActionBar";
@@ -15,13 +15,8 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-type Props = {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-};
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Promise<Metadata> {
+  const locale = assertLocale((await params).locale);
   const t = await getTranslations({ locale, namespace: "Meta" });
 
   return {
@@ -42,17 +37,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function LocaleLayout({ children, params }: Props) {
-  const { locale } = await params;
-
-  if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
+export default async function LocaleLayout({ children, params }: LayoutProps<"/[locale]">) {
+  // assertLocale ersetzt die frühere hasLocale/notFound-Kaskade an dieser
+  // Stelle: dieselbe Prüfung, aber an genau einer Stelle für alle Routen.
+  const locale = assertLocale((await params).locale);
 
   setRequestLocale(locale);
 
   return (
-    <html lang={locale} className={`${serif.variable} ${sansUi.variable} h-full overflow-x-hidden antialiased`}>
+    <html
+      lang={locale}
+      className={`${serif.variable} ${sansUi.variable} h-full overflow-x-hidden antialiased`}
+    >
       <body className="min-h-full flex flex-col bg-surface text-text">
         <NextIntlClientProvider>
           <SkipLink />
