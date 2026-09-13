@@ -1,4 +1,4 @@
-*[Diese Seite auf Deutsch](README.de.md)*
+_[Diese Seite auf Deutsch](README.de.md)_
 
 # Salon Kupferglanz — Hair Salon (Concept)
 

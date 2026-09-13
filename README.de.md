@@ -1,4 +1,4 @@
-*[This page in English](README.md)*
+_[This page in English](README.md)_
 
 # Salon Kupferglanz — Friseursalon (Konzept)
 
