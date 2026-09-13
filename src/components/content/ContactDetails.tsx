@@ -10,11 +10,15 @@ export async function ContactDetails() {
 
   return (
     <div>
-      <h2 className="font-sans text-eyebrow uppercase tracking-[0.22em] text-accent-copper">{t("detailsTitle")}</h2>
+      <h2 className="font-sans text-eyebrow uppercase tracking-[0.22em] text-accent-copper">
+        {t("detailsTitle")}
+      </h2>
 
       <dl className="mt-6 border-t border-border-subtle font-sans">
         <div className="border-b border-border-subtle py-4">
-          <dt className="text-xs uppercase tracking-wide text-text-secondary">{t("addressLabel")}</dt>
+          <dt className="text-xs uppercase tracking-wide text-text-secondary">
+            {t("addressLabel")}
+          </dt>
           <dd className="mt-1 text-text">
             <span className="font-display text-lg">{SALON.name}</span>
             <br />
@@ -37,7 +41,10 @@ export async function ContactDetails() {
         <div className="border-b border-border-subtle py-4">
           <dt className="text-xs uppercase tracking-wide text-text-secondary">{t("emailLabel")}</dt>
           <dd className="mt-1">
-            <a href={EMAIL_HREF} className="inline-block py-1 text-text transition-colors hover:text-accent-copper">
+            <a
+              href={EMAIL_HREF}
+              className="inline-block py-1 text-text transition-colors hover:text-accent-copper"
+            >
               {SALON.email}
             </a>
           </dd>
@@ -65,7 +72,9 @@ export async function ContactDetails() {
         </div>
 
         <div className="border-b border-border-subtle py-4">
-          <dt className="text-xs uppercase tracking-wide text-text-secondary">{t("arrivalLabel")}</dt>
+          <dt className="text-xs uppercase tracking-wide text-text-secondary">
+            {t("arrivalLabel")}
+          </dt>
           <dd className="mt-1 max-w-sm leading-relaxed text-text-secondary">{t("arrivalBody")}</dd>
         </div>
       </dl>

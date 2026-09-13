@@ -12,8 +12,14 @@ export async function ServicesOverview() {
     <Section tone="muted">
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-6">
-          <h2 className="font-sans text-eyebrow uppercase text-accent-copper">{t("servicesTitle")}</h2>
-          <ButtonLink href="/leistungen" variant="link" className="font-sans text-sm uppercase tracking-wide">
+          <h2 className="font-sans text-eyebrow uppercase text-accent-copper">
+            {t("servicesTitle")}
+          </h2>
+          <ButtonLink
+            href="/leistungen"
+            variant="link"
+            className="font-sans text-sm uppercase tracking-wide"
+          >
             {t("servicesCta")}
           </ButtonLink>
         </div>
@@ -26,7 +32,9 @@ export async function ServicesOverview() {
               key={key}
               className="flex flex-col gap-2 border-b border-border-subtle py-8 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
             >
-              <h3 className="font-display text-display-md font-light text-text">{t(`service${key}Title`)}</h3>
+              <h3 className="font-display text-display-md font-light text-text">
+                {t(`service${key}Title`)}
+              </h3>
               <p className="font-sans text-sm uppercase tracking-[0.12em] text-text-secondary">
                 {t(`service${key}Body`)}
               </p>

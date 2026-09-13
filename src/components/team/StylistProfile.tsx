@@ -24,7 +24,10 @@ export async function StylistProfile({
   return (
     // scroll-mt keeps the heading clear of the sticky header when arriving via
     // the #slug link from the homepage team teaser.
-    <article id={stylist.slug} className="grid scroll-mt-28 items-start gap-8 lg:grid-cols-2 lg:gap-16">
+    <article
+      id={stylist.slug}
+      className="grid scroll-mt-28 items-start gap-8 lg:grid-cols-2 lg:gap-16"
+    >
       {/* max-h caps the frame below the viewport height: at a full-width 4:5
           ratio the portrait was taller than the screen on phones, so the
           stylist's face never fit on screen in one piece. */}
@@ -49,7 +52,9 @@ export async function StylistProfile({
         <div>
           <span className="font-display text-sm text-accent-copper">0{index + 1}</span>
           <h2 className="mt-3 font-display text-display-md font-light text-text">{stylist.name}</h2>
-          <p className="mt-1 font-sans text-xs uppercase tracking-[0.16em] text-accent-copper">{stylist.role}</p>
+          <p className="mt-1 font-sans text-xs uppercase tracking-[0.16em] text-accent-copper">
+            {stylist.role}
+          </p>
         </div>
 
         <Text variant="body" className="max-w-md">
@@ -60,7 +65,10 @@ export async function StylistProfile({
           <VisuallyHidden>{t("specialtiesLabel")}</VisuallyHidden>
           <ul className="flex flex-wrap gap-x-5 gap-y-2 border-t border-border-subtle pt-4">
             {stylist.specialties.map((specialty) => (
-              <li key={specialty} className="font-sans text-xs uppercase tracking-[0.12em] text-text-secondary">
+              <li
+                key={specialty}
+                className="font-sans text-xs uppercase tracking-[0.12em] text-text-secondary"
+              >
                 {specialty}
               </li>
             ))}

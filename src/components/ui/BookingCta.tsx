@@ -36,7 +36,13 @@ export function BookingCta({
   }
 
   return (
-    <ButtonLink href="/kontakt" variant={variant} size={size} className={className} onClick={onNavigate}>
+    <ButtonLink
+      href="/kontakt"
+      variant={variant}
+      size={size}
+      className={className}
+      onClick={onNavigate}
+    >
       {children}
     </ButtonLink>
   );
