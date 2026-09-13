@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { assertLocale } from "@/i18n/locale";
 import { ContactDetails } from "@/components/content/ContactDetails";
 import { ContactForm } from "@/components/content/ContactForm";
 import { ContactMap } from "@/components/content/ContactMap";
 import { PageHeader } from "@/components/content/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import type { Locale } from "@/data/types";
 import { buildAlternates, buildOpenGraph } from "@/lib/seo";
 
-type Props = { params: Promise<{ locale: Locale }> };
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata({
+  params,
+}: PageProps<"/[locale]/kontakt">): Promise<Metadata> {
+  const locale = assertLocale((await params).locale);
   const t = await getTranslations({ locale, namespace: "Kontakt" });
   const tMeta = await getTranslations({ locale, namespace: "Meta" });
   return {
@@ -29,8 +29,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function KontaktPage({ params }: Props) {
-  const { locale } = await params;
+export default async function KontaktPage({ params }: PageProps<"/[locale]/kontakt">) {
+  const locale = assertLocale((await params).locale);
   setRequestLocale(locale);
   const t = await getTranslations("Kontakt");
 

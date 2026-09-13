@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { assertLocale } from "@/i18n/locale";
 import { Faq } from "@/components/content/Faq";
 import { PageHeader } from "@/components/content/PageHeader";
 import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
@@ -9,10 +10,8 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { getFaq } from "@/data/faq";
 import { getServicesByCategory, SERVICE_CATEGORIES } from "@/data/services";
-import type { Locale, ServiceCategory as ServiceCategoryType } from "@/data/types";
+import type { ServiceCategory as ServiceCategoryType } from "@/data/types";
 import { buildAlternates, buildOpenGraph } from "@/lib/seo";
-
-type Props = { params: Promise<{ locale: Locale }> };
 
 const CATEGORY_LABEL_KEY: Record<ServiceCategoryType, string> = {
   damen: "categoryDamen",
@@ -21,8 +20,10 @@ const CATEGORY_LABEL_KEY: Record<ServiceCategoryType, string> = {
   pflege: "categoryPflege",
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata({
+  params,
+}: PageProps<"/[locale]/leistungen">): Promise<Metadata> {
+  const locale = assertLocale((await params).locale);
   const t = await getTranslations({ locale, namespace: "Leistungen" });
   const tMeta = await getTranslations({ locale, namespace: "Meta" });
   return {
@@ -39,8 +40,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function LeistungenPage({ params }: Props) {
-  const { locale } = await params;
+export default async function LeistungenPage({ params }: PageProps<"/[locale]/leistungen">) {
+  const locale = assertLocale((await params).locale);
   setRequestLocale(locale);
   const t = await getTranslations("Leistungen");
   const tCommon = await getTranslations("Common");
@@ -68,7 +69,9 @@ export default async function LeistungenPage({ params }: Props) {
         </Container>
 
         <Container className="mt-14 flex flex-col items-start gap-8">
-          <p className="max-w-xl font-sans text-sm leading-relaxed text-text-secondary">{t("disclaimer")}</p>
+          <p className="max-w-xl font-sans text-sm leading-relaxed text-text-secondary">
+            {t("disclaimer")}
+          </p>
           <BookingCta>{tCommon("bookAppointment")}</BookingCta>
         </Container>
       </Section>

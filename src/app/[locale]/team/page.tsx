@@ -1,18 +1,16 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { assertLocale } from "@/i18n/locale";
 import { PageHeader } from "@/components/content/PageHeader";
 import { StylistProfile } from "@/components/team/StylistProfile";
 import { BookingCta } from "@/components/ui/BookingCta";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { getStylists } from "@/data/stylists";
-import type { Locale } from "@/data/types";
 import { buildAlternates, buildOpenGraph } from "@/lib/seo";
 
-type Props = { params: Promise<{ locale: Locale }> };
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata({ params }: PageProps<"/[locale]/team">): Promise<Metadata> {
+  const locale = assertLocale((await params).locale);
   const t = await getTranslations({ locale, namespace: "Team" });
   const tMeta = await getTranslations({ locale, namespace: "Meta" });
   return {
@@ -29,8 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function TeamPage({ params }: Props) {
-  const { locale } = await params;
+export default async function TeamPage({ params }: PageProps<"/[locale]/team">) {
+  const locale = assertLocale((await params).locale);
   setRequestLocale(locale);
   const t = await getTranslations("Team");
   const tCommon = await getTranslations("Common");
