@@ -19,7 +19,7 @@ export async function TeamTeaser({ locale }: { locale: Locale }) {
           <h2>
             <span className="block font-sans text-eyebrow uppercase tracking-[0.22em] text-accent-copper">
               {t("teamTitle")}
-            </span>
+            </span>{" "}
             <span className="mt-4 block font-display text-display-md font-light text-text">
               {t("teamBody")}
             </span>

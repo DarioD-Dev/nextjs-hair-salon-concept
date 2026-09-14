@@ -26,10 +26,14 @@ export async function WorkPreview({ locale }: { locale: Locale }) {
         {/* Eyebrow and statement live inside one h2. Previously the eyebrow was
             the heading and the line that actually says something was a <p>, so
             the document outline listed the labels and skipped the content. */}
+        {/* Das {" "} zwischen den Spans ist notwendig: JSX verwirft Leerraum,
+            der eine Zeilenschaltung enthält. Ohne es klebt der textContent die
+            beiden Zeilen zu einem Wort zusammen — sichtbar ändert sich nichts,
+            weil Leerraum zwischen Blockboxen beim Layout ohnehin entfällt. */}
         <h2 className="max-w-xl">
           <span className="block font-sans text-eyebrow uppercase tracking-[0.22em] text-accent-copper">
             {t("workTitle")}
-          </span>
+          </span>{" "}
           <span className="mt-4 block font-display text-display-md font-light text-text">
             {t("workBody")}
           </span>
