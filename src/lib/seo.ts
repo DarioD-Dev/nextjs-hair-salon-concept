@@ -45,6 +45,12 @@ export function buildOpenGraph({
     siteName,
     url: absoluteUrl(href, locale),
     locale: locale === "de" ? "de_AT" : "en_US",
+    // Muss hier stehen, nicht nur im Layout: Next führt `openGraph` NICHT
+    // zusammen, sondern ersetzt es ganz. Jede Seite, die diesen Helfer
+    // benutzt, überschrieb damit die Bildangabe des Layouts — die Vorschau
+    // blieb bildlos, obwohl twitter:card ein großes Bild versprach und die
+    // Route /opengraph-image es auslieferte.
+    images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630 }],
   };
 }
 

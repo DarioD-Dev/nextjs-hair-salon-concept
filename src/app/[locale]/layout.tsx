@@ -32,6 +32,12 @@ export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Pr
       title: t("title"),
       description: t("description"),
       locale: locale === "de" ? "de_AT" : "en_US",
+      // Ausdrücklich gesetzt, nicht der automatischen Ergänzung überlassen:
+      // Next ergänzt das Bild aus app/opengraph-image.tsx nur, solange keine
+      // eigene openGraph-Angabe existiert — openGraph wird ganz ersetzt statt
+      // zusammengeführt. Ohne diese Zeile blieb die Vorschau bildlos, obwohl
+      // twitter:card ein großes Bild versprach.
+      images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630 }],
     },
     twitter: { card: "summary_large_image" },
   };
