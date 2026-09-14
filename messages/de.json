@@ -119,5 +119,10 @@
     "navTitle": "Navigation",
     "contactTitle": "Kontakt",
     "followTitle": "Folgen"
+  },
+  "NotFound": {
+    "title": "Diese Seite gibt es nicht.",
+    "body": "Der Link ist vielleicht veraltet oder hat einen Tippfehler.",
+    "home": "Zur Startseite"
   }
 }

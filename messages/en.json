@@ -119,5 +119,10 @@
     "navTitle": "Navigation",
     "contactTitle": "Contact",
     "followTitle": "Follow"
+  },
+  "NotFound": {
+    "title": "This page doesn't exist.",
+    "body": "The link may be outdated or contain a typo.",
+    "home": "Back to the homepage"
   }
 }
