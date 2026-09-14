@@ -14,7 +14,7 @@ const initialState: ContactFormState = { status: "idle" };
 export function ContactForm() {
   const t = useTranslations("Kontakt");
   const [state, formAction, pending] = useActionState(submitContactForm, initialState);
-  const successRef = useRef<HTMLParagraphElement>(null);
+  const successRef = useRef<HTMLDivElement>(null);
 
   // On success the form is replaced by the confirmation. role="status"
   // announces it, but keyboard focus was left on a submit button that no
@@ -26,14 +26,15 @@ export function ContactForm() {
 
   if (state.status === "success") {
     return (
-      <p
-        ref={successRef}
-        tabIndex={-1}
-        role="status"
-        className="font-sans text-accent-copper outline-none"
-      >
-        {t("success")}
-      </p>
+      // Die Bestätigung nennt die Grenze dieser Demo ausdrücklich. Ohne den
+      // Hinweis stünde hier eine Zusage, die niemand einlöst: Ohne
+      // RESEND_API_KEY protokolliert die Server-Action nur und meldet Erfolg.
+      // Wer das Formular testet — und Interessenten tun das — würde auf eine
+      // Antwort warten, die nie kommt.
+      <div ref={successRef} tabIndex={-1} role="status" className="outline-none">
+        <p className="font-sans text-accent-copper">{t("success")}</p>
+        <p className="mt-2 font-sans text-sm text-text-secondary">{t("demoNote")}</p>
+      </div>
     );
   }
 
