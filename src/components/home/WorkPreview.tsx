@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { getStylists } from "@/data/stylists";
-import type { Locale } from "@/data/types";
+import type { Locale } from "@/i18n/routing";
 
 export async function WorkPreview({ locale }: { locale: Locale }) {
   const t = await getTranslations("Home");

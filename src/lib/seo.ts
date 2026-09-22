@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { getPathname } from "@/i18n/navigation";
-import { routing } from "@/i18n/routing";
-import type { Locale } from "@/data/types";
+import { routing, type Locale } from "@/i18n/routing";
 
 // Single place the absolute site origin comes from. Without it Next renders
 // canonical and Open Graph URLs relative, which makes them useless to both

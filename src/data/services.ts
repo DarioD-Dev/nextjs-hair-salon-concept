@@ -1,4 +1,5 @@
-import type { Locale, ResolvedService, Service, ServiceCategory } from "./types";
+import type { ResolvedService, Service, ServiceCategory } from "./types";
+import type { Locale } from "@/i18n/routing";
 
 const services: Service[] = [
   // Damen
@@ -109,10 +110,6 @@ const services: Service[] = [
 
 function resolve(service: Service, locale: Locale): ResolvedService {
   return { ...service, name: service.name[locale] };
-}
-
-export async function getServices(locale: Locale): Promise<ResolvedService[]> {
-  return services.map((service) => resolve(service, locale));
 }
 
 export async function getServicesByCategory(

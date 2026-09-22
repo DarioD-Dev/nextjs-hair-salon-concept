@@ -1,4 +1,5 @@
-import type { Locale, ResolvedStylist, Stylist } from "./types";
+import type { ResolvedStylist, Stylist } from "./types";
+import type { Locale } from "@/i18n/routing";
 
 const stylists: Stylist[] = [
   {

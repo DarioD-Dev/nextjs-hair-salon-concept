@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { getStylists } from "@/data/stylists";
 import { getPathname } from "@/i18n/navigation";
-import type { Locale } from "@/data/types";
+import type { Locale } from "@/i18n/routing";
 
 export async function TeamTeaser({ locale }: { locale: Locale }) {
   const t = await getTranslations("Home");

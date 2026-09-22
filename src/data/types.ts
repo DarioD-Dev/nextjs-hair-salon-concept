@@ -1,4 +1,8 @@
-export type Locale = "de" | "en";
+import type { Locale } from "@/i18n/routing";
+
+/** Text, der pro Sprache einen Wert hat. `Locale` kommt aus der
+ *  Routing-Tabelle — eine zweite Deklaration hier hätte bei einer dritten
+ *  Sprache still auseinanderlaufen können. */
 export type Localized<T = string> = Record<Locale, T>;
 
 export interface Stylist {

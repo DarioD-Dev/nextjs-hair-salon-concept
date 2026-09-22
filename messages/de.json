@@ -124,5 +124,11 @@
     "title": "Diese Seite gibt es nicht.",
     "body": "Der Link ist vielleicht veraltet oder hat einen Tippfehler.",
     "home": "Zur Startseite"
+  },
+  "Error": {
+    "title": "Da ist etwas schiefgelaufen.",
+    "body": "Diese Seite konnte gerade nicht geladen werden. Ein neuer Versuch hilft oft schon.",
+    "retry": "Erneut versuchen",
+    "home": "Zur Startseite"
   }
 }
