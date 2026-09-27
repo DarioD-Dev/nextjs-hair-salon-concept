@@ -2,6 +2,17 @@ import type { Metadata } from "next";
 import { getPathname } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 
+/**
+ * Der Alternativtext des Vorschaubilds — an einer Stelle, weil ihn zwei
+ * Module brauchen: `app/opengraph-image.tsx` exportiert ihn als `alt`, und
+ * das `images`-Objekt der Linkvorschau muss ihn am Bild mitgeben. Next
+ * ergänzt das Datei-Metadatum nämlich NUR, solange keine eigene
+ * `openGraph.images`-Angabe existiert — und die steht hier aus gutem Grund.
+ * Ohne diese Zusammenführung bleibt der Export wirkungslos und og:image:alt
+ * leer.
+ */
+export const OG_IMAGE_ALT = "Salon Kupferglanz — Friseur in Wien";
+
 // Single place the absolute site origin comes from. Without it Next renders
 // canonical and Open Graph URLs relative, which makes them useless to both
 // crawlers and link previews.
@@ -71,7 +82,7 @@ export function buildOpenGraph({
     // benutzt, überschrieb damit die Bildangabe des Layouts — die Vorschau
     // blieb bildlos, obwohl twitter:card ein großes Bild versprach und die
     // Route /opengraph-image es auslieferte.
-    images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630 }],
+    images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: OG_IMAGE_ALT }],
   };
 }
 

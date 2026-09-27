@@ -7,7 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { MobileActionBar } from "@/components/layout/MobileActionBar";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { routing } from "@/i18n/routing";
-import { buildAlternates, OG_LOCALES, SITE_URL } from "@/lib/seo";
+import { OG_IMAGE_ALT, OG_LOCALES, SITE_URL, buildAlternates } from "@/lib/seo";
 import { serif, sansUi } from "@/styles/fonts";
 import "@/styles/globals.css";
 
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Pr
       // eigene openGraph-Angabe existiert — openGraph wird ganz ersetzt statt
       // zusammengeführt. Ohne diese Zeile blieb die Vorschau bildlos, obwohl
       // twitter:card ein großes Bild versprach.
-      images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630 }],
+      images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: OG_IMAGE_ALT }],
     },
     twitter: { card: "summary_large_image" },
   };
