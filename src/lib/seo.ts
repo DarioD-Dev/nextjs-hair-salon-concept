@@ -12,10 +12,32 @@ import { routing, type Locale } from "@/i18n/routing";
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://nextjs-hair-salon-concept.vercel.app";
 
+/**
+ * hreflang-Werte. Regionsbehaftet, wo das Publikum eines ist: Das Deutsch ist
+ * für Österreich geschrieben, das Kroatisch für Kroatien. Das schlichte "en"
+ * bleibt schlicht, weil die englische Fassung kein bestimmtes Land meint.
+ *
+ * Literale Tabelle statt Ternär, und das ist der eigentliche Punkt: Vorher
+ * stand hier `l === "de" ? "de-AT" : "en"`. Mit einer dritten Sprache hätte
+ * das zweimal den Schlüssel "en" erzeugt — `Object.fromEntries` behält den
+ * letzten, die kroatische Adresse hätte die englische überschrieben. Kein
+ * Compilerfehler, kein Build-Fehler, einfach ein verschwundenes hreflang.
+ * Als `Record<Locale, string>` ist eine neue Sprache ohne Entscheidung
+ * stattdessen ein Typfehler.
+ */
+const HREFLANG: Record<Locale, string> = { de: "de-AT", en: "en", hr: "hr-HR" };
+
+/**
+ * OpenGraph-Sprachcodes sind unterstrichen und regionsbehaftet, die eigenen
+ * Codes der Seite sind es nicht. Vorher ebenfalls ein Ternär, das jede
+ * Sprache außer Deutsch still zu `en_US` gemacht hätte.
+ */
+export const OG_LOCALES: Record<Locale, string> = { de: "de_AT", en: "en_US", hr: "hr_HR" };
+
 type Href = Parameters<typeof getPathname>[0]["href"];
 
-export function absoluteUrl(href: Href, locale: string): string {
-  return new URL(getPathname({ href, locale: locale as Locale }), SITE_URL).toString();
+export function absoluteUrl(href: Href, locale: Locale): string {
+  return new URL(getPathname({ href, locale }), SITE_URL).toString();
 }
 
 /**
@@ -34,7 +56,7 @@ export function buildOpenGraph({
   title: string;
   description: string;
   siteName: string;
-  locale: string;
+  locale: Locale;
   href: Href;
 }): Metadata["openGraph"] {
   return {
@@ -43,7 +65,7 @@ export function buildOpenGraph({
     description,
     siteName,
     url: absoluteUrl(href, locale),
-    locale: locale === "de" ? "de_AT" : "en_US",
+    locale: OG_LOCALES[locale],
     // Muss hier stehen, nicht nur im Layout: Next führt `openGraph` NICHT
     // zusammen, sondern ersetzt es ganz. Jede Seite, die diesen Helfer
     // benutzt, überschrieb damit die Bildangabe des Layouts — die Vorschau
@@ -55,15 +77,13 @@ export function buildOpenGraph({
 
 /**
  * Canonical for the current locale plus one hreflang entry per locale.
- * Both DE and EN exist for every page, and their paths differ
- * (/de/leistungen vs /en/services) — so the mapping has to come from the
- * routing table, it cannot be assembled by string concatenation.
+ * Every page exists in every locale, and the paths differ
+ * (/de/leistungen vs /en/services vs /hr/usluge) — so the mapping has to come
+ * from the routing table, it cannot be assembled by string concatenation.
  */
-export function buildAlternates(href: Href, locale: string): Metadata["alternates"] {
+export function buildAlternates(href: Href, locale: Locale): Metadata["alternates"] {
   return {
     canonical: absoluteUrl(href, locale),
-    languages: Object.fromEntries(
-      routing.locales.map((l) => [l === "de" ? "de-AT" : "en", absoluteUrl(href, l)]),
-    ),
+    languages: Object.fromEntries(routing.locales.map((l) => [HREFLANG[l], absoluteUrl(href, l)])),
   };
 }

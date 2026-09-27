@@ -7,7 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { MobileActionBar } from "@/components/layout/MobileActionBar";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { routing } from "@/i18n/routing";
-import { buildAlternates, SITE_URL } from "@/lib/seo";
+import { buildAlternates, OG_LOCALES, SITE_URL } from "@/lib/seo";
 import { serif, sansUi } from "@/styles/fonts";
 import "@/styles/globals.css";
 
@@ -31,7 +31,10 @@ export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Pr
       siteName: t("title"),
       title: t("title"),
       description: t("description"),
-      locale: locale === "de" ? "de_AT" : "en_US",
+      // Dieselbe Tabelle wie in lib/seo.ts, kein zweites Ternär: Vorher stand
+      // hier `locale === "de" ? "de_AT" : "en_US"`, was jede weitere Sprache
+      // still zu en_US gemacht hätte.
+      locale: OG_LOCALES[locale],
       // Ausdrücklich gesetzt, nicht der automatischen Ergänzung überlassen:
       // Next ergänzt das Bild aus app/opengraph-image.tsx nur, solange keine
       // eigene openGraph-Angabe existiert — openGraph wird ganz ersetzt statt

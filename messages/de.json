@@ -12,7 +12,7 @@
     "menuTitle": "Navigation",
     "skipToContent": "Zum Inhalt springen",
     "callAria": "Anrufen: {phone}",
-    "switchLanguageTo": "Sprache zu {locale} wechseln"
+    "language": "Sprache"
   },
   "Nav": {
     "home": "Start",

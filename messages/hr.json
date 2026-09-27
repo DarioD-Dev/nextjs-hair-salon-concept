@@ -1,0 +1,134 @@
+{
+  "Meta": {
+    "title": "Salon Kupferglanz",
+    "description": "Frizerski salon u Beču — šišanje, boja i njega s karakterom.",
+    "homeTitle": "Frizer u Beču — šišanje, boja i njega",
+    "homeDescription": "Salon Kupferglanz u Beču: šišanja po mjeri, balayage i koncepti boje, njega i tretmani. Termini po dogovoru."
+  },
+  "Header": {
+    "home": "{name} — na početnu",
+    "openMenu": "Otvori izbornik",
+    "closeMenu": "Zatvori izbornik",
+    "menuTitle": "Navigacija",
+    "skipToContent": "Prijeđi na sadržaj",
+    "callAria": "Nazovite: {phone}",
+    "language": "Jezik"
+  },
+  "Nav": {
+    "home": "Početna",
+    "team": "Tim",
+    "leistungen": "Usluge",
+    "kontakt": "Kontakt"
+  },
+  "Common": {
+    "bookAppointment": "Naručite se",
+    "call": "Nazovite"
+  },
+  "Home": {
+    "heroEyebrow": "Frizer u Beču",
+    "heroTagline": "Osobni stil. Profesionalna boja. Vaš salon u Beču.",
+    "heroSecondaryCta": "Usluge i cijene",
+    "quickLocation": "Lokacija",
+    "quickHours": "Radno vrijeme",
+    "quickBooking": "Termini",
+    "quickBookingValue": "Po dogovoru",
+    "dnaTitle": "Kako radimo",
+    "dna1Title": "Prvo savjetovanje",
+    "dna1Body": "Svaki termin počinje razgovorom o strukturi kose, svakodnevici i tome koliko njege želite — besplatno i neobvezno, čak i ako se nakon toga predomislite.",
+    "dna2Title": "Vi birate osobu",
+    "dna2Body": "Ne naručujete se kod „salona“, nego kod stilista s vlastitim područjem rada. Tko je za što zadužen, vidite u timu.",
+    "dna3Title": "Cijena prije početka",
+    "dna3Body": "Koliko će termin stajati, reći ćemo vam prije nego što počnemo — ne tek na blagajni. Sve okvirne cijene navedene su u cjeniku.",
+    "servicesTitle": "Usluge",
+    "serviceCutTitle": "Cut",
+    "serviceCutBody": "Šišanje · Styling",
+    "serviceColorTitle": "Color",
+    "serviceColorBody": "Balayage · Izrast · Toniranje",
+    "serviceCareTitle": "Care",
+    "serviceCareBody": "Njega · Olaplex · Tretmani",
+    "servicesCta": "Sve usluge i cijene",
+    "workTitle": "Naš rad",
+    "workBody": "Djelić onoga što kod nas nastaje.",
+    "workImageAlt": "Frizura iz salona Kupferglanz, potpisuje {name}",
+    "teamTitle": "Tim",
+    "teamBody": "Troje stilista, jedan zajednički standard: zanat s karakterom.",
+    "teamCta": "Upoznajte tim",
+    "locationTitle": "Posjetite nas",
+    "locationHoursTitle": "Radno vrijeme",
+    "locationArrival": "Dvije minute hoda od postaje U3 Neubaugasse, tramvaj 49 staje odmah iza ugla. U cijeloj ulici zona kratkotrajnog parkiranja, garaža Mariahilfer Straße oko pet minuta hoda.",
+    "locationRoute": "Upute za dolazak",
+    "finalCtaTitle": "Vaš sljedeći termin počinje ovdje."
+  },
+  "Hours": {
+    "weekdays": "uto — pet",
+    "weekdaysTime": "09:00 — 19:00",
+    "saturday": "sub",
+    "saturdayTime": "09:00 — 15:00",
+    "sunday": "ned i pon",
+    "sundayTime": "Zatvoreno",
+    "shortWeekdays": "uto — pet · 09 — 19 h"
+  },
+  "Team": {
+    "title": "Naš tim",
+    "subtitle": "Upoznajte ljude iza salona Kupferglanz — svatko sa svojim područjem rada i svojim rukopisom.",
+    "metaDescription": "Stilisti salona Kupferglanz u Beču: područja rada, rukopis i radovi Lene Hofer, Markusa Webera i Selin Yıldız.",
+    "specialtiesLabel": "Područja rada",
+    "portfolioLabel": "Radovi: {name}",
+    "workImageAlt": "Frizura iz salona Kupferglanz, potpisuje {name}"
+  },
+  "Leistungen": {
+    "title": "Usluge i cijene",
+    "subtitle": "Transparentne cijene za svaku prigodu — bez iznenađenja.",
+    "metaDescription": "Sve cijene salona Kupferglanz u Beču: žensko i muško šišanje, balayage, boja izrasta, Olaplex i tretmani — s trajanjem i odgovorima na najčešća pitanja.",
+    "categoryDamen": "Žene",
+    "categoryHerren": "Muškarci",
+    "categoryFarbe": "Boja",
+    "categoryPflege": "Njega",
+    "durationMinutes": "{minutes} min",
+    "priceFrom": "od {price}",
+    "disclaimer": "Konačna cijena ovisi o duljini kose, utrošenom vremenu i željenom rezultatu.",
+    "faqTitle": "Česta pitanja"
+  },
+  "Kontakt": {
+    "title": "Kontakt",
+    "subtitle": "Pišite nam ili nazovite — veselimo se vašem dolasku.",
+    "metaDescription": "Salon Kupferglanz, Kupfergasse 8, 1060 Wien: radno vrijeme, telefon, dolazak podzemnom i tramvajem te kontaktni obrazac.",
+    "detailsTitle": "Salon i dolazak",
+    "addressLabel": "Adresa",
+    "phoneLabel": "Telefon",
+    "hoursLabel": "Radno vrijeme",
+    "arrivalLabel": "Dolazak i parkiranje",
+    "arrivalBody": "U3 Neubaugasse, dvije minute hoda. Tramvaj 49 staje iza ugla. U cijeloj ulici zona kratkotrajnog parkiranja, garaža Mariahilfer Straße oko pet minuta hoda.",
+    "emailLabel": "E-mail",
+    "formTitle": "Pišite nam",
+    "formIntro": "Za siguran termin najbrže je nazvati — na poruke iz obrasca javljamo se unutar jednog radnog dana.",
+    "nameLabel": "Ime",
+    "messageLabel": "Poruka",
+    "submit": "Pošaljite poruku",
+    "submitting": "Šalje se…",
+    "success": "Hvala na poruci!",
+    "demoNote": "Konceptna studija: e-mail se ne šalje i nitko vam se neće javiti.",
+    "error": "Provjerite unesene podatke i pokušajte ponovno.",
+    "mapTitle": "Lokacija na Google Maps",
+    "mapLoad": "Učitajte kartu",
+    "mapNotice": "Učitavanjem karte podaci se šalju Googleu."
+  },
+  "Footer": {
+    "credit": "Izradio Dario Dominkovic",
+    "disclaimer": "Konceptna studija – nije službena stranica stvarnog salona.",
+    "navTitle": "Navigacija",
+    "contactTitle": "Kontakt",
+    "followTitle": "Pratite nas"
+  },
+  "NotFound": {
+    "title": "Ova stranica ne postoji.",
+    "body": "Poveznica je možda zastarjela ili sadrži tipfeler.",
+    "home": "Na početnu"
+  },
+  "Error": {
+    "title": "Nešto je pošlo po zlu.",
+    "body": "Stranicu trenutačno nije moguće učitati. Ponovni pokušaj često pomogne.",
+    "retry": "Pokušajte ponovno",
+    "home": "Na početnu"
+  }
+}
