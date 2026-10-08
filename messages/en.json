@@ -137,7 +137,11 @@
     "leistungLabel": "Service",
     "stylistLabel": "Stylist",
     "wunschterminLabel": "Preferred time",
-    "kontaktLabel": "Contact"
+    "kontaktLabel": "Contact",
+    "reminderTitle": "Appointment reminder",
+    "reminderIntro": "This message would normally arrive automatically 24 hours before your appointment. As a demo, you can see it right away.",
+    "reminderCta": "Send demo reminder now",
+    "reminderSent": "Requested. If email sending is configured for this demo, it'll land in your inbox shortly — otherwise it was only logged."
   },
   "Footer": {
     "credit": "Website by Dario Dominkovic",

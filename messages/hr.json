@@ -137,7 +137,11 @@
     "leistungLabel": "Usluga",
     "stylistLabel": "Frizer/frizerka",
     "wunschterminLabel": "Željeni termin",
-    "kontaktLabel": "Kontakt"
+    "kontaktLabel": "Kontakt",
+    "reminderTitle": "Podsjetnik na termin",
+    "reminderIntro": "Ova poruka inače stiže automatski 24 sata prije vašeg termina. Kao demo je možete odmah pogledati.",
+    "reminderCta": "Pošaljite demo podsjetnik odmah",
+    "reminderSent": "Zatraženo. Ako je slanje e-pošte za ovu demo verziju postavljeno, stiže uskoro u vaš sandučić — inače je samo zabilježeno."
   },
   "Footer": {
     "credit": "Izradio Dario Dominkovic",

@@ -137,7 +137,11 @@
     "leistungLabel": "Leistung",
     "stylistLabel": "Stylist:in",
     "wunschterminLabel": "Wunschtermin",
-    "kontaktLabel": "Kontakt"
+    "kontaktLabel": "Kontakt",
+    "reminderTitle": "Terminerinnerung",
+    "reminderIntro": "Normalerweise kommt diese Nachricht automatisch 24 Stunden vor deinem Termin. Als Demo kannst du sie dir jetzt schon zeigen lassen.",
+    "reminderCta": "Demo-Erinnerung jetzt senden",
+    "reminderSent": "Angefragt. Ist der Mailversand für diese Demo eingerichtet, kommt sie gleich in deinem Postfach an — sonst wurde sie nur protokolliert."
   },
   "Footer": {
     "credit": "Website von Dario Dominkovic",

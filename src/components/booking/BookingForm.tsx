@@ -10,6 +10,7 @@ import type { ResolvedService, ServiceCategory } from "@/data/types";
 import { naechsteOeffnungstage, zeitfenster } from "@/lib/availability";
 import { formatPrice } from "@/lib/format";
 import { submitBookingRequest, type BookingFormState } from "@/lib/actions/booking";
+import { sendDemoReminder, type ReminderState } from "@/lib/actions/reminder";
 import { cn } from "@/lib/cn";
 
 const CATEGORY_ORDER: ServiceCategory[] = ["damen", "herren", "farbe", "pflege"];
@@ -21,6 +22,7 @@ const CATEGORY_LABEL_KEY = {
 } as const satisfies Record<ServiceCategory, string>;
 
 const START: BookingFormState = { status: "idle" };
+const REMINDER_START: ReminderState = { status: "idle" };
 const TOTAL_STEPS = 5;
 
 // Dieselbe Karten-Optik für alle vier Auswahlschritte — Leistung, Stylist:in,
@@ -71,6 +73,17 @@ export function BookingForm({
 
   const [state, absenden, laeuft] = useActionState(submitBookingRequest, START);
   const bestaetigungRef = useRef<HTMLDivElement>(null);
+
+  // Name/E-Mail werden nur für die Erinnerungs-Demo nach dem Absenden
+  // gebraucht — die unkontrollierten Formularfelder sind dann längst aus
+  // dem DOM, deshalb hier zusätzlich in State sichern statt nachträglich
+  // auszulesen.
+  const [kontaktName, setKontaktName] = useState("");
+  const [kontaktEmail, setKontaktEmail] = useState("");
+  const [reminderState, sendErinnerung, erinnerungLaeuft] = useActionState(
+    sendDemoReminder,
+    REMINDER_START,
+  );
 
   useEffect(() => {
     if (state.status === "success") bestaetigungRef.current?.focus();
@@ -141,6 +154,30 @@ export function BookingForm({
             </div>
           ))}
         </dl>
+
+        <div className="mt-8 border-t border-border-subtle pt-6">
+          <h3 className="font-sans font-semibold text-text">{t("reminderTitle")}</h3>
+          <p className="mt-1 font-sans text-sm text-text-secondary">{t("reminderIntro")}</p>
+          {reminderState.status === "success" ? (
+            <p className="mt-3 font-sans text-sm text-accent-copper">{t("reminderSent")}</p>
+          ) : (
+            <form action={sendErinnerung} className="mt-3">
+              <input type="hidden" name="service" value={service.name} />
+              <input
+                type="hidden"
+                name="stylist"
+                value={stylists.find((s) => s.slug === stylist)?.name ?? ""}
+              />
+              <input type="hidden" name="datum" value={dateFormat.format(datum)} />
+              <input type="hidden" name="zeit" value={zeit} />
+              <input type="hidden" name="name" value={kontaktName} />
+              <input type="hidden" name="email" value={kontaktEmail} />
+              <Button type="submit" variant="secondary" size="sm" disabled={erinnerungLaeuft}>
+                {erinnerungLaeuft ? t("submitting") : t("reminderCta")}
+              </Button>
+            </form>
+          )}
+        </div>
       </div>
     );
   }
@@ -251,7 +288,15 @@ export function BookingForm({
   const emailInvalid = Boolean(state.fieldErrors?.email);
 
   return (
-    <form action={absenden} className="flex flex-col gap-6">
+    <form
+      action={absenden}
+      onSubmit={(e) => {
+        const daten = new FormData(e.currentTarget);
+        setKontaktName(String(daten.get("name") ?? ""));
+        setKontaktEmail(String(daten.get("email") ?? ""));
+      }}
+      className="flex flex-col gap-6"
+    >
       {stepOf}
       <div className="rounded-lg border border-border-subtle bg-surface-raised p-4 font-sans text-sm">
         <p className="font-medium text-text">{service.name}</p>
