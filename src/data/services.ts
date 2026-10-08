@@ -131,3 +131,7 @@ export async function getServicesByCategory(
 }
 
 export const SERVICE_CATEGORIES: ServiceCategory[] = ["damen", "herren", "farbe", "pflege"];
+
+export async function getAllServices(locale: Locale): Promise<ResolvedService[]> {
+  return services.map((service) => resolve(service, locale));
+}

@@ -16,6 +16,7 @@ export const routing = defineRouting({
     // Im Kroatischen dasselbe Wort wie im Deutschen — hier steht der Eintrag
     // trotzdem ausdrücklich, damit er nicht aus Versehen aussieht.
     "/kontakt": { de: "/kontakt", en: "/contact", hr: "/kontakt" },
+    "/termin": { de: "/termin", en: "/booking", hr: "/termin" },
   },
 });
 

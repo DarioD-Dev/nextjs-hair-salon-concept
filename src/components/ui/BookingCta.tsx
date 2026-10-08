@@ -5,8 +5,9 @@ import { buttonStyles, type ButtonSize, type ButtonVariant } from "./buttonStyle
 // The single seam for the future booking layer (Bauplan phase 2: integrate an
 // existing provider — Fresha/Treatwell — rather than build a booking system).
 // While SALON.bookingUrl is null every "book an appointment" CTA falls back to
-// the contact page; setting that one value repoints all of them at the real
-// provider without touching a component.
+// /termin, this site's own request flow (service, stylist, day, time — see
+// BookingForm.tsx); setting that one value repoints all of them at the real
+// provider instead, without touching a component.
 export function BookingCta({
   children,
   variant,
@@ -37,7 +38,7 @@ export function BookingCta({
 
   return (
     <ButtonLink
-      href="/kontakt"
+      href="/termin"
       variant={variant}
       size={size}
       className={className}
