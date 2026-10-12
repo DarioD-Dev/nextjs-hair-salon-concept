@@ -85,7 +85,7 @@ export async function StylistProfile({
                   alt={t("workImageAlt", { name: stylist.name })}
                   fill
                   loading="lazy"
-                  sizes="(min-width: 640px) 160px, 30vw"
+                  sizes="(min-width: 1024px) 18vw, (min-width: 640px) 32vw, 30vw"
                   className="object-cover grayscale transition-[filter] duration-500 group-hover:grayscale-0 motion-reduce:transition-none"
                 />
               </li>
